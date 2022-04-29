@@ -39,6 +39,7 @@ namespace SiteX.Services.Data.Tests.Blog.PostTests
                 Body = "Text",
                 Title = "Title",
                 PostImages = new string[] { "image1", "image2" },
+                User = new ApplicationUser() { Id="id"},
                 PostGenres = new int[] { 1, 2 },
             };
             await service.CreatePostAsync(post);
