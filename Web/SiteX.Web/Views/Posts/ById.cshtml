@@ -1,0 +1,167 @@
+﻿@using Microsoft.AspNetCore.Html
+@model SiteX.Web.ViewModels.BlogViewModels.PostOutViewModel
+@{
+    this.ViewData["Title"] = Model.Title;
+    void DisplayComments(int? parentId)
+    {
+        var comments = this.Model.Comments.Where(x => x.ParentId == parentId);
+        if (!comments.Any())
+        {
+            return;
+        }
+
+        @foreach (var comment in comments)
+        {
+            <div class="container-fluid mt-100">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <div class="media flex-wrap w-100 align-items-center">
+                                    <div class="media-body ml-3">
+                                        @comment.User.UserName
+                                          <div class="text-muted small">@comment.CreatedOn</div>
+                                    </div>
+                                    <div class="text-muted small ml-3">
+                                        @if (this.User.Identity.IsAuthenticated)
+                                        {
+                                            <div class="px-4 pt-3"> <button type="button" class="btn btn-secondary" onclick="showAddCommentForm(@comment.Id)"><i class="fa fa-plus"></i>&nbsp; Reply</button> </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <article>
+                                    @(new HtmlString(@comment.Body))
+                                </article>
+                                @{
+                                    DisplayComments(comment.Id);
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+}
+
+<script src="~/lib/ckeditor5/ckeditor.js"></script>
+
+<article class="singlepost post-12078 post type-post status-publish format-standard has-post-thumbnail hentry category-frontpage category-talent" id="@Model.Id">
+
+    <header>
+        <!-- THUMB -->
+        <div class="singlePosThumb">
+            <img alt="@Model.Title" data-src="@Model.PreviewImage" class=" lazyloaded" src="@Model.PreviewImage" style="width:100%;height:700px;">
+            <div class="content-title">
+                <h1 class="page-title">@Model.Title</h1>
+            </div>
+            <div class="bub-right"></div>
+            <div class="bub-left"></div>
+        </div>
+
+        <div class="clearfix"></div>
+        <!-- META -->
+        <div class="singleMeta">
+            <div class="grid_2 alpha omega">
+                <img alt="Poster s image" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.YAJlHz4zchNP5zIfsajE9AHaFr%26pid%3DApi&f=1" width="88" height="88">
+            </div>
+            <div class="grid_10 ">
+                <div class="grid_5 ">
+                    @if (Model.Poster != null)
+                    {
+                        <i class="icon-user"></i> @:by <a href="" title="" rel="author">@Model.Poster.UserName</a> <br>
+                    }
+                    else
+                    {
+                        <i class="icon-user"></i> @:by <a href="" title="" rel="author"> Anonymous </a> <br>
+
+                    }
+
+                    <i class="icon-time"></i> @Model.Date <br>
+                </div>
+                <div class="grid_5 ">
+                    <i class="icon-bookmark-empty"></i>
+                    @foreach (var genres in Model.Genres)
+                    {
+                        <a asp-action="SearchByGenre" asp-route-id="@genres.Id" rel="category tag">@genres.Name ,</a>
+                    }
+                    <br>
+                    <p>@Model.Comments.Count() Comments</p>
+                </div>
+                <p> --- </p>
+
+            </div>
+
+        </div>
+    </header>
+
+    <div class="clearfix"></div>
+
+    <div class="content-entry">
+
+        @(new HtmlString(@Model.Body))
+
+    </div>
+
+    <div class="clearfix"></div>
+
+
+    <div class="clearfix"></div>
+</article>
+
+ @if (this.User.Identity.IsAuthenticated)
+                    {
+                        <div class="px-4 pt-3"> <button type="button" class="btn btn-primary float-right" onclick="showAddCommentForm(0)"><i class="fa fa-plus"></i>&nbsp; Comment</button> </div>
+                        <div class="clearfix"></div>
+                    }
+                    @{ DisplayComments(null); }
+
+
+
+
+<div>
+    <form asp-controller="Posts" asp-action="CreateComment" method="post" id="AddCommentForm" style="display: none">
+        <input type="hidden" name="PostId" value="@this.Model.Id" />
+        <input type="hidden" name="ParentId" value="0" />
+        <div>
+            <label for="Body"></label>
+            <textarea name="Body" id="Body" class="form-control"></textarea>
+        </div>
+        <div>
+            <input type="submit" class="btn btn-primary" value="Add comment" />
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+<script>
+        function showAddCommentForm(parentId) {
+            $("#AddCommentForm input[name='ParentId']").val(parentId);
+            $("#AddCommentForm").show();
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#AddCommentForm").offset().top
+            }, 1000);
+        }
+        function sendVote(postId, isUpVote) {
+            var token = $("#votesForm input[name=__RequestVerificationToken]").val();
+            var json = { postId: postId, isUpVote: isUpVote };
+            $.ajax({
+                url: "/api/votes",
+                type: "POST",
+                data: JSON.stringify(json),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                headers: { 'X-CSRF-TOKEN': token },
+                success: function (data) {
+                    $("#votesCount").html(data.votesCount);
+                }
+            })};
+    ClassicEditor
+        .create( document.querySelector( '#Body' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+}

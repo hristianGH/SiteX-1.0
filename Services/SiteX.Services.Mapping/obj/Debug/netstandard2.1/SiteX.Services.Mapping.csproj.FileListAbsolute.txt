@@ -1,0 +1,10 @@
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services.Mapping\bin\Debug\netstandard2.1\SiteX.Services.Mapping.deps.json
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services.Mapping\bin\Debug\netstandard2.1\SiteX.Services.Mapping.dll
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services.Mapping\bin\Debug\netstandard2.1\SiteX.Services.Mapping.pdb
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services.Mapping\obj\Debug\netstandard2.1\SiteX.Services.Mapping.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services.Mapping\obj\Debug\netstandard2.1\SiteX.Services.Mapping.AssemblyInfoInputs.cache
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services.Mapping\obj\Debug\netstandard2.1\SiteX.Services.Mapping.AssemblyInfo.cs
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services.Mapping\obj\Debug\netstandard2.1\SiteX.Services.Mapping.csproj.CoreCompileInputs.cache
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services.Mapping\obj\Debug\netstandard2.1\SiteX.Services.Mapping.dll
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services.Mapping\obj\Debug\netstandard2.1\SiteX.Services.Mapping.pdb
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services.Mapping\obj\Debug\netstandard2.1\SiteX.Services.Mapping.csproj.AssemblyReference.cache

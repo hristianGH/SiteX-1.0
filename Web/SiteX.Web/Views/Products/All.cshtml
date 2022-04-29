@@ -1,0 +1,66 @@
+﻿@using SiteX.Common
+@model SiteX.Web.ViewModels.ShopViewModels.ProductModels.ProductAllViewModel
+
+@{
+    this.ViewData["Title"] = "Shop";
+
+}
+
+    <div class="col">
+        <div class="row">
+            <div class="col-2">
+                <partial name="_ShopLayout" model="Model.ToSelectList"></partial>
+            </div>
+
+            @*<div class="album py-5 bg-light">*@
+            <div class="col-10">
+
+                <div class="row row-cards row-8">
+
+                    @foreach (var product in this.Model.Products)
+                    {
+                        <div class="card col-md-4">
+                            <img src="@product.ImageUrl" class="card-img-top" style="height:330px;width:auto;" alt="Product Picture Missing">
+
+                            <div class="card-body">
+                                <a title="item" asp-action="ById" asp-route-id="@product.Id" class="btn btn-primary stretched-link">@product.Price лв</a>
+
+                                <p class="card-text">@product.Name</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        @if (product.Categories != null)
+                                        {
+                                            foreach (var category in product.Categories)
+                                            {
+                                                <button type="button" class="btn btn-sm btn-outline-secondary">@category.Name</button>
+
+                                            }
+                                        }
+                                    </div>
+                                    @if (product.Locations != null)
+                                    {
+                                        foreach (var location in product.Locations)
+                                        {
+
+                                            <small class="text-muted">@location.Address</small>
+
+                                        }
+                                    }
+
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    @*</div>*@
+
+
+    <partial name="_PagingPartial" model="Model" />

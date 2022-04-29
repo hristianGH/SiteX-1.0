@@ -1,0 +1,35 @@
+﻿ @model SiteX.Web.ViewModels.ShopViewModels.ShopToSelectList;
+@{
+
+}
+
+<div id="Categories" class="card">
+    <p>Categories: </p>
+    @foreach (var category in Model.CategoriesToList)
+    {
+        <a title="item" asp-action="SearchByCategory" asp-route-id="@category.Id" class="btn btn-primary ">@category.Name</a>
+    }
+</div>
+
+<div id="Genders" class="card">
+    <p>Genders: </p>
+    @foreach (var gender in Model.GendersToList)
+    {
+        <a title="item" asp-action="SearchByGender" asp-route-id="@gender" class="btn btn-primary">@gender</a>
+    }
+</div>
+<div id="Sizes" class="card">
+    <p>Sizes: </p>
+    @foreach (var size in Model.SizesToList)
+    {
+        <a title="item" asp-action="SearchBySize" asp-route-id="@size.Id" class="btn btn-primary">@size.Name</a>
+    }
+</div>
+<div id="Colors" class="card">
+    <p>Colors: </p>
+    @foreach (var color in Model.ColorsToList)
+    {
+        <a title="item" asp-action="SearchByColor" asp-route-id="@color.Id" class="btn btn-primary">@color.Name</a>
+    }
+
+</div>

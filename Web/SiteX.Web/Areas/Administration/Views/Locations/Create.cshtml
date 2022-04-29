@@ -1,0 +1,24 @@
+﻿@model SiteX.Web.ViewModels.ShopViewModels.LocationModels.LocationViewModel
+@{
+
+    ViewData["Title"] = "Creating Location";
+}
+<form method="post" class="align-content-md-center">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Address"></label>
+        <input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+           <div class="pull-right postreply">
+                <div class="pull-left"><button type="submit" class="btn btn-primary">Create Location</button></div>
+                <div class="clearfix"></div>
+            </div>
+
+</form>

@@ -1,0 +1,9 @@
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services\bin\Debug\netstandard2.1\SiteX.Services.deps.json
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services\bin\Debug\netstandard2.1\SiteX.Services.dll
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services\bin\Debug\netstandard2.1\SiteX.Services.pdb
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services\obj\Debug\netstandard2.1\SiteX.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services\obj\Debug\netstandard2.1\SiteX.Services.AssemblyInfoInputs.cache
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services\obj\Debug\netstandard2.1\SiteX.Services.AssemblyInfo.cs
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services\obj\Debug\netstandard2.1\SiteX.Services.csproj.CoreCompileInputs.cache
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services\obj\Debug\netstandard2.1\SiteX.Services.dll
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services\obj\Debug\netstandard2.1\SiteX.Services.pdb

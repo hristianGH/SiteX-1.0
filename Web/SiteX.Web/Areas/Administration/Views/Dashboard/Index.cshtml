@@ -1,0 +1,60 @@
+﻿@model SiteX.Web.ViewModels.Administration.Dashboard.IndexViewModel
+@{
+    this.ViewData["Title"] = "Admin dashboard";
+}
+
+<div class=grid-row>
+    <div class=item id="Categories">
+        <li class="row btn btn-outline-info">
+            <a class="nav-link text-dark" asp-area="Administration" asp-controller="Categories" asp-action="Index">Category </a>
+        </li>
+    </div>
+    <div class=item id="Locations">
+        <li class="row btn btn-outline-info">
+            <a class="nav-link text-dark" asp-area="Administration" asp-controller="Locations" asp-action="Index">Location </a>
+        </li>
+    </div>
+    <div class=item id="Sizes">
+       <li class="row btn btn-outline-info">
+            <a class="nav-link text-dark" asp-area="Administration" asp-controller="Sizes" asp-action="Index">Size </a>
+        </li>
+    </div>
+    <div class=item id="Colors">
+       <li class="row btn btn-outline-info">
+            <a class="nav-link text-dark" asp-area="Administration" asp-controller="Colors" asp-action="Index">Color </a>
+        </li>
+    </div>
+    <div class=item id="Products">
+        <li class="row btn btn-outline-info">
+            <a class="nav-link text-dark" asp-area="Administration" asp-controller="Products" asp-action="Index">Product </a>
+        </li>
+    </div>
+    <div class=item id="Posts">
+        <li class="row btn btn-outline-info">
+            <a class="nav-link text-dark" asp-area="Administration" asp-controller="Posts" asp-action="Index">Posts </a>
+        </li>
+    </div>
+
+    <div class=item id="Genres">
+        <li class="row btn btn-outline-info">
+            <a class="nav-link text-dark" asp-area="Administration" asp-controller="Genres" asp-action="Index">Genres </a>
+        </li>
+    </div>
+
+    <div class=item id="Genres">
+        <li class="row btn btn-outline-info">
+            <a class="nav-link text-dark" asp-area="Administration" asp-controller="Comments" asp-action="Index">Comments </a>
+        </li>
+    </div>
+
+     <div class=item id="Genres">
+        <li class="row btn btn-outline-info">
+            <a class="nav-link text-dark" asp-area="Administration" asp-controller="Members" asp-action="Index">Members </a>
+        </li>
+    </div>
+    <div class=item id="Genres">
+        <li class="row btn btn-outline-info">
+            <a class="nav-link text-dark" asp-area="Administration" asp-controller="Articles" asp-action="Index">Articles </a>
+        </li>
+    </div>
+</div>

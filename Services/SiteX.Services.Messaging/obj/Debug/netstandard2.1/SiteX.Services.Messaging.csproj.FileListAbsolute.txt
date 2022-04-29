@@ -1,0 +1,10 @@
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services.Messaging\bin\Debug\netstandard2.1\SiteX.Services.Messaging.deps.json
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services.Messaging\bin\Debug\netstandard2.1\SiteX.Services.Messaging.dll
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services.Messaging\bin\Debug\netstandard2.1\SiteX.Services.Messaging.pdb
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services.Messaging\obj\Debug\netstandard2.1\SiteX.Services.Messaging.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services.Messaging\obj\Debug\netstandard2.1\SiteX.Services.Messaging.AssemblyInfoInputs.cache
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services.Messaging\obj\Debug\netstandard2.1\SiteX.Services.Messaging.AssemblyInfo.cs
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services.Messaging\obj\Debug\netstandard2.1\SiteX.Services.Messaging.csproj.CoreCompileInputs.cache
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services.Messaging\obj\Debug\netstandard2.1\SiteX.Services.Messaging.dll
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services.Messaging\obj\Debug\netstandard2.1\SiteX.Services.Messaging.pdb
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Services\SiteX.Services.Messaging\obj\Debug\netstandard2.1\SiteX.Services.Messaging.csproj.AssemblyReference.cache

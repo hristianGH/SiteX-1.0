@@ -1,0 +1,68 @@
+﻿@model IEnumerable<SiteX.Data.Models.Blog.Comment>
+ @{
+     ViewData["Title"] = "Index";
+
+}
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+
+ 
+<table id="DataTable" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Body)
+            </th>
+              <th>
+                @Html.DisplayNameFor(model => model.PostId)
+            </th>
+              <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedOn)
+            </th>
+        </tr>
+    </thead>
+ 
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Body)
+                </td>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.PostId)
+                </td>
+                 <td>
+                    @Html.DisplayFor(modelItem => item.User.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedOn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedOn)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>| 
+                </td>
+                 <td>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>| 
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+ 

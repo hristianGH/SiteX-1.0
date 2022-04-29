@@ -1,0 +1,52 @@
+﻿  @model SiteX.Data.Models.Team.Member
+
+@{
+    this.ViewData["Title"] = "Edit Member";
+
+}
+<script src="~/lib/ckeditor5/ckeditor.js"></script>
+
+<form method="post" class=align-content-md-center>
+
+    <div class="form-group">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" value=@Model.FirstName class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+
+    
+    <div class="form-group">
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" value=@Model.LastName class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Picture"></label>
+        <input asp-for="Picture" value=@Model.Picture class="form-control" />
+        <span asp-validation-for="Picture" class="text-danger"></span>
+    </div>
+
+
+
+    <div class="form-group" >
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" value=@Model.Description class="form-control" rows="5" > </textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+         
+    </div>
+
+
+    <input type="submit" class="btn btn-primary" />
+
+</form>
+
+
+
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#Description' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>

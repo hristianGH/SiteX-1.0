@@ -1,0 +1,43 @@
+﻿@using Microsoft.AspNetCore.Html
+@model SiteX.Data.Models.Blog.Comment
+
+<div class="container-fluid mt-100">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <div class="media flex-wrap w-100 align-items-center">
+                        <div class="media-body ml-3">
+                            @Model.User.UserName
+                            <div class="text-muted small">@Model.CreatedOn</div>
+                        </div>
+                        <div class="text-muted small ml-3">
+                            @if (this.User.Identity.IsAuthenticated)
+                            {
+                                <div class="px-4 pt-3"> <button type="button" class="btn btn-secondary" onclick="showAddCommentForm(@Model.Id)"><i class="fa fa-plus"></i>&nbsp; </button> </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <article>
+                        @(new HtmlString(@Model.Body))
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form method="post" class=align-content-md-center>
+    <div class="form-group">
+        <input asp-for="Id" value=@Model.Id class="form-control" type="hidden" />
+    </div>
+     <div class="form-group">
+        <input asp-for="Body" value=@Model.Body class="form-control" type="hidden" />
+    </div>
+
+
+
+    <input type="submit" class="btn btn-primary" value="Delete" />
+</form>

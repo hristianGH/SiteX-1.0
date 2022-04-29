@@ -1,0 +1,112 @@
+﻿@using Microsoft.AspNetCore.Html
+@model SiteX.Web.ViewModels.ShopViewModels.ProductModels.BuyingProductViewModel
+
+@{
+    this.ViewData["Title"] = $"{@Model.Product.Name}";
+    var categoriesList = new SelectList(Model.CategoriesToList,"Id","Name");
+    var locationsList = new SelectList(Model.LocationsToList, "Id", "Address");
+    var sizesList = new SelectList(Model.SizesToList, "Id", "Name");
+    var colorsList = new SelectList(Model.ColorsToList, "Id", "Name");
+}
+
+<form method="post" class="align-content-md-center">
+
+   
+    <div class="form-group">
+        <label asp-for="ProductId"></label>
+        <input asp-for="ProductId" value="@Model.ProductId"  readonly />
+    </div>
+
+<div class="row featurette">
+
+    <div class="col-md-7">
+
+        <h2 class="featurette-heading">@Model.Product.Name </h2>
+
+
+        <button type="button" class="btn btn-primary btn-lg">@Model.Product.Price лв</button>
+
+        <p>Gender: @Model.Product.Gender </p>
+
+
+       <div class="pull-right postreply">
+                <div class="pull-left"><button type="submit" class="btn btn-primary">Buy</button></div>
+                <div class="clearfix"></div>
+            </div>
+
+
+        <div id="Categories" class="btn-group">
+            <p>Categories: </p>
+            @foreach (var category in Model.Product.Categories)
+            {
+                <a title="item" asp-action="SearchByCategory" asp-route-id="@category.Id" class="btn btn-primary stretched-link">@category.Name</a>
+            }
+
+        </div>
+
+
+        <div class=form-group>
+            <label asp-for="Size"></label>
+            <select class="form-control" asp-for="Size" asp-items="@sizesList" required>
+                <span asp-validation-for="Size" class="text-danger"></span>
+            </select>
+        </div>
+
+
+        <div class=form-group>
+            <label asp-for="Color"></label>
+            <select class="form-control" asp-for="Color" asp-items="@colorsList" required>
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-md-5">
+        <title>Placeholder</title>
+
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <img src="@ViewBag.ImageOne" class="d-block w-100" alt="">
+                </div>
+                @foreach (var image in @ViewBag.Images)
+                {
+                    <div class="carousel-item">
+                        <img src="@image" class="d-block w-100" alt="">
+                    </div>
+                }
+
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="accordion" id="DescriptionAC">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Description
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#DescriptionAC">
+            <div class="card-body">
+                <p>@(new HtmlString(Model.Product.Description))  </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</form>

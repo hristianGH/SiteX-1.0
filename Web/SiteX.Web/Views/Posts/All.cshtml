@@ -1,0 +1,49 @@
+﻿@using Microsoft.AspNetCore.Html
+ @using SiteX.Common
+@model SiteX.Web.ViewModels.BlogViewModels.PostAllViewModel
+@{
+    this.ViewData["Title"] = "Blog";
+
+}
+
+
+
+<div class="col">
+    <div class="row">
+        <div class="col-2">
+            <partial name="_BlogLayout" model="@Model.ToSelectList"></partial>
+
+        </div>
+        <div class="col-md-8">
+            @foreach (var post in Model.Posts)
+            {
+                <div class="row-md-10">
+                    <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                        <div class="card-body d-flex flex-column align-items-start">
+                            <div class="btn-group">
+                                @if (post.Genres != null)
+                                {
+                                    foreach (var genre in post.Genres)
+                                    {
+                                        <a type="button" asp-action="SearchByGenre" asp-route-id="@genre.Id"  class="btn btn-sm btn-outline-secondary">@genre.Name</a>
+                                    }
+                                }
+                            </div>
+                            <h3 class="mb-0">
+                                <a class="text-dark" asp-action="ById" asp-route-id="@post.Id">@post.Title</a>
+                            </h3>
+                            <div class="mb-1 text-muted">@post.Date</div>
+                            <p class="card-text mb-auto"> @(new HtmlString(@post.PreviewBody))</p>
+                            <a href="#">Continue reading</a>
+                        </div>
+                        <img class="card-img-right flex-auto d-none d-md-block" src="@post.PreviewImage" style="width: 200px; height: 250px;">
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>
+
+<partial name="_PagingPartial" model="Model" />
+

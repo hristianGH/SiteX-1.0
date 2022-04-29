@@ -1,0 +1,10 @@
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Web\SiteX.Web.Infrastructure\bin\Debug\netstandard2.1\SiteX.Web.Infrastructure.deps.json
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Web\SiteX.Web.Infrastructure\bin\Debug\netstandard2.1\SiteX.Web.Infrastructure.dll
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Web\SiteX.Web.Infrastructure\bin\Debug\netstandard2.1\SiteX.Web.Infrastructure.pdb
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Web\SiteX.Web.Infrastructure\obj\Debug\netstandard2.1\SiteX.Web.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Web\SiteX.Web.Infrastructure\obj\Debug\netstandard2.1\SiteX.Web.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Web\SiteX.Web.Infrastructure\obj\Debug\netstandard2.1\SiteX.Web.Infrastructure.AssemblyInfo.cs
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Web\SiteX.Web.Infrastructure\obj\Debug\netstandard2.1\SiteX.Web.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Web\SiteX.Web.Infrastructure\obj\Debug\netstandard2.1\SiteX.Web.Infrastructure.dll
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Web\SiteX.Web.Infrastructure\obj\Debug\netstandard2.1\SiteX.Web.Infrastructure.pdb
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\Web\SiteX.Web.Infrastructure\obj\Debug\netstandard2.1\SiteX.Web.Infrastructure.csproj.AssemblyReference.cache

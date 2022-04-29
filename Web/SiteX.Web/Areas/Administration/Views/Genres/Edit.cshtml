@@ -1,0 +1,17 @@
+﻿ @model SiteX.Data.Models.Blog.Genre
+ @{
+    ViewData["Title"] = "Edit Genre";
+}
+<form method="post" class="align-content-md-center">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" value="@Model.Name"  class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+           <div class="pull-right postreply">
+                <div class="pull-left"><button type="submit" class="btn btn-primary">Edit Genre</button></div>
+                <div class="clearfix"></div>
+            </div>
+
+</form>

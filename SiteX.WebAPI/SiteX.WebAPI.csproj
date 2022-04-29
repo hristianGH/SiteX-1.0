@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.16" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Data\SiteX.Data.Common\SiteX.Data.Common.csproj" />
+    <ProjectReference Include="..\Data\SiteX.Data.Models\SiteX.Data.Models.csproj" />
+    <ProjectReference Include="..\Data\SiteX.Data\SiteX.Data.csproj" />
+    <ProjectReference Include="..\Services\SiteX.Services.Data\SiteX.Services.Data.csproj" />
+    <ProjectReference Include="..\SiteX.Common\SiteX.Common.csproj" />
+    <ProjectReference Include="..\Web\SiteX.Web.ViewModels\SiteX.Web.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>

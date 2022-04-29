@@ -1,0 +1,10 @@
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\SiteX.Common\bin\Debug\netstandard2.1\SiteX.Common.deps.json
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\SiteX.Common\bin\Debug\netstandard2.1\SiteX.Common.dll
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\SiteX.Common\bin\Debug\netstandard2.1\SiteX.Common.pdb
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\SiteX.Common\obj\Debug\netstandard2.1\SiteX.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\SiteX.Common\obj\Debug\netstandard2.1\SiteX.Common.AssemblyInfoInputs.cache
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\SiteX.Common\obj\Debug\netstandard2.1\SiteX.Common.AssemblyInfo.cs
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\SiteX.Common\obj\Debug\netstandard2.1\SiteX.Common.csproj.CoreCompileInputs.cache
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\SiteX.Common\obj\Debug\netstandard2.1\SiteX.Common.dll
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\SiteX.Common\obj\Debug\netstandard2.1\SiteX.Common.pdb
+C:\Users\1\Documents\GitHub\SoftUni C#\SiteX\SiteX.Common\obj\Debug\netstandard2.1\SiteX.Common.csproj.AssemblyReference.cache

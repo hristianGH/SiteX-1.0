@@ -1,0 +1,137 @@
+﻿@model SiteX.Web.ViewModels.ShopViewModels.ProductModels.ProductViewModel
+@{
+    this.ViewData["Title"] = "Edit Product";
+    int countCategories = ViewBag.CategoriesCount;
+
+    var gendersList = new SelectList(Model.GendersToList);
+    var categoriesList = new SelectList(Model.CategoriesToList, "Id", "Name");
+    var locationsList = new SelectList(Model.LocationsToList, "Id", "Address");
+    var sizesList = new SelectList(Model.SizesToList, "Id", "Name");
+    var colorsList = new SelectList(Model.ColorsToList, "Id", "Name");
+
+}
+
+
+
+<form method="post" class=align-content-md-center>
+    <p>Id @Model.Id</p>
+    <div class="form-group">
+        <input asp-for="Id" value="@Model.Id" type="hidden" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" value="@Model.Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" value="@Model.Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+         <div class="form-group">
+        <label asp-for="Quantity"></label>
+        <input asp-for="Quantity" value="@Model.Quantity" class="form-control" />
+        <span asp-validation-for="Quantity" class="text-danger"></span>
+    </div>
+
+
+
+    <div class=form-group>
+        <label asp-for="Gender"></label>
+        <select class="form-control"  asp-for="Gender" asp-items="@gendersList" required>
+            <span asp-validation-for="Gender" class="text-danger"></span>
+            
+        </select>
+    </div>
+
+    <div class=form-group>
+        <label asp-for="Categories"></label>
+        <select class="form-control" asp-for="Categories" asp-items="@categoriesList" required>
+            <span asp-validation-for="Categories" class="text-danger"></span>
+
+        </select>
+    </div>
+
+    <div class=form-group>
+        <label asp-for="Locations"></label>
+        <select class="form-control" asp-for="Locations" asp-items="@locationsList" required>
+            <span asp-validation-for="Locations" class="text-danger"></span>
+
+        </select>
+    </div>
+
+    <div class=form-group>
+        <label asp-for="Sizes"></label>
+        <select class="form-control" asp-for="Sizes" asp-items="@sizesList" required>
+            <span asp-validation-for="Sizes" class="text-danger"></span>
+
+        </select>
+    </div>
+
+    <div class=form-group>
+        <label asp-for="Colors"></label>
+        <select class="form-control" asp-for="Colors" asp-items="@colorsList" required>
+            <span asp-validation-for="Colors" class="text-danger"></span>
+
+        </select>
+    </div>
+
+
+
+    @foreach (var pictureUrl in Model.Pictures)
+    {
+        <div class="form-group">
+            <label asp-for="Pictures"></label>
+            <input asp-for="Pictures" value="@pictureUrl" class="form-control" />
+            <span asp-validation-for="Pictures" class="text-danger"></span>
+        </div>
+    }
+
+
+
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control"> </textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+
+
+    <input type="submit" class="btn btn-primary" />
+
+</form>
+
+<script src="~/js~/js/jquery-3.6.0.js"> </script>
+
+
+<script>
+      function Selected(id) {
+       $('body').find("option").eq(id).css({"background":"gray", "color":"black"});
+    }
+</script>
+
+<script>
+      function AddTextToArea(valueInput) {
+       document.getElementById("Description").value=valueInput;
+    }
+</script>
+
+@*@foreach (var categoryId in Model.Categories)
+{
+    <script> Selected("@(categoryId.Id+@gendersList.Count())") </script>
+}
+
+@foreach (var locationId in Model.Locations)
+{
+    <script>Selected("@(@gendersList.Count()+locationId.Id + countCategories)")</script>
+}*@
+
+
+<script>Selected(@Model.Gender)</script>
+<script>
+    AddTextToArea("@(Model.Description)")
+</script>

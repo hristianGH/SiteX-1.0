@@ -1,0 +1,30 @@
+﻿  @model SiteX.Data.Models.Blog.Comment
+
+@{
+    this.ViewData["Title"] = "Edit Comment";
+
+}
+<script src="~/lib/ckeditor5/ckeditor.js"></script>
+
+<form method="post" class=align-content-md-center>
+      <p>Id @Model.Id</p>
+    <div class="form-group">
+        <input asp-for="Id" value="@Model.Id" type="hidden" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Body"></label>
+        <input asp-for="Body" value=@Model.Body class="form-control" />
+        <span asp-validation-for="Body" class="text-danger"></span>
+    </div>
+
+    <input type="submit" class="btn btn-primary" />
+</form>
+
+
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#Body' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>

@@ -1,0 +1,43 @@
+﻿@model SiteX.Data.Models.Article.Article
+@{
+    this.ViewData["Title"] = "Edit Article";
+
+}
+<script src="~/lib/ckeditor5/ckeditor.js"></script>
+
+<form method="post" class=align-content-md-center>
+    <p>Id @Model.Id</p>
+    <div class="form-group">
+        <input asp-for="Id" value="@Model.Id" type="hidden" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" value="@Model.Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+
+      <div class="form-group">
+        <label asp-for="Abstract"></label>
+        <input asp-for="Abstract" value="@Model.Abstract" class="form-control" />
+        <span asp-validation-for="Abstract" class="text-danger"></span>
+    </div>
+
+    
+    <input type="submit" class="btn btn-primary" />
+
+</form>
+
+
+
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#Abstract' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+
+
+<script src="~/js~/js/jquery-3.6.0.js"> </script>

@@ -1,0 +1,66 @@
+﻿@model SiteX.Web.ViewModels.BlogViewModels.PostEditViewModel
+@{
+    this.ViewData["Title"] = "Edit Product";
+
+    var genres = new SelectList(Model.GenresToList,"Id","Name");
+
+}
+<script src="~/lib/ckeditor5/ckeditor.js"></script>
+
+<form method="post" class=align-content-md-center>
+    <p>Id @Model.Id</p>
+    <div class="form-group">
+        <input asp-for="Id" value="@Model.Id" type="hidden" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" value="@Model.Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+
+    <div class=form-group>
+        <label asp-for="PostGenres"></label>
+        <select class="form-control"  asp-for="PostGenres" asp-items="@genres" required>
+            <span asp-validation-for="PostGenres" class="text-danger"></span>
+            
+        </select>
+    </div>
+
+    @foreach (var pictureUrl in Model.PostImages)
+    {
+        <div class="form-group">
+            <label asp-for="PostImages"></label>
+            <input asp-for="PostImages" value="@pictureUrl" class="form-control" />
+            <span asp-validation-for="PostImages" class="text-danger"></span>
+        </div>
+    }
+
+
+
+
+    <div class="form-group" >
+        <label asp-for="Body"></label>
+        <textarea asp-for="Body" class="form-control" rows="5" > </textarea>
+        <span asp-validation-for="Body" class="text-danger"></span>
+         
+    </div>
+
+    
+    <input type="submit" class="btn btn-primary" />
+
+</form>
+
+
+
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#Body' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+
+
+<script src="~/js~/js/jquery-3.6.0.js"> </script>

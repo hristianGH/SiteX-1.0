@@ -1,0 +1,48 @@
+﻿@model SiteX.Data.Models.Article.Article
+
+@{
+    this.ViewData["Title"] = "Delete Comment";
+
+}
+<script src="~/lib/ckeditor5/ckeditor.js"></script>
+
+<form method="post" class=align-content-md-center>
+ <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" readonly/>
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+      <div class="form-group">
+        <label asp-for="Abstract"></label>
+        <input asp-for="Abstract" class="form-control" readonly/>
+        <span asp-validation-for="Abstract" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IdLink"></label>
+        <input asp-for="IdLink" class="form-control" readonly/>
+        <span asp-validation-for="IdLink" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Url"></label>
+        <input asp-for="Url" class="form-control" readonly />
+        <span asp-validation-for="Url" class="text-danger"></span>
+    </div>
+
+
+
+    <input type="submit" class="btn btn-danger" value="DELETE" />
+
+</form>
+
+
+
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#Abstract' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>

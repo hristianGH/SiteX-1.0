@@ -1,0 +1,80 @@
+﻿@using Microsoft.AspNetCore.Html
+@model SiteX.Data.Models.Article.Article
+@{
+    this.ViewData["Title"] = Model.Title;
+}
+
+<script src="~/lib/ckeditor5/ckeditor.js"></script>
+
+<div class="article-details" id="article-details" style="outline: currentcolor none medium;">
+
+
+
+    <header class="heading" id="heading">
+
+
+        <div class="full-view" id="full-view-heading">
+
+
+            <h1 class="heading-title">
+
+
+                @Model.Title
+
+
+            </h1>
+
+
+            <ul class="identifiers" id="full-view-identifiers">
+
+                <li>
+                    <span class="identifier doi">
+                        <span class="id-label">
+
+                            DOI:
+
+                        </span>
+
+
+                        <a class="id-link" target="_blank" rel="noopener" ref="linksrc=article_id_link&amp;article_id=10.1056/NEJMoa2114833&amp;id_type=DOI" href="https://doi.org/@Model.IdLink.Trim()" data-ga-category="full_text" data-ga-action="DOI">
+                            @Model.IdLink
+                        </a>
+
+                    </span>
+
+                </li>
+
+            </ul>
+
+
+        </div>
+
+
+
+    </header>
+
+
+    <div class="abstract" id="abstract">
+        <h2 class="title">
+            Abstract
+
+        </h2>
+        @(new HtmlString(@Model.Abstract))
+    </div>
+
+
+
+
+
+
+
+
+    <div id="supplemental-data" class="supplemental-data">
+    </div>
+
+    <p class="copyright" id="copyright">
+        Copyright © 2022 Massachusetts Medical Society.
+    </p>
+    <a>source: @Model.Url</a>
+
+</div>
