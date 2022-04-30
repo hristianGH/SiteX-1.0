@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.EntityFrameworkCore.Migrations;
+
+[assembly: ExcludeFromCodeCoverage]
 
 namespace SiteX.Data.Migrations
 {

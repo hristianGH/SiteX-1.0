@@ -1,16 +1,16 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Services.Data.ArticleService;
-using SiteX.Data.Models.Article;
-using SiteX.Data.Models.Team;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Xunit;
-using System;
-
-namespace SiteX.Services.Data.Tests.Articles
+﻿namespace SiteX.Services.Data.Tests.Articles
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Article;
+    using SiteX.Data.Models.Team;
+    using SiteX.Services.Data.ArticleService;
+    using Xunit;
+
     public class ArticlesToPage
     {
         [Fact]
@@ -24,7 +24,7 @@ namespace SiteX.Services.Data.Tests.Articles
 
             articleRepo.Setup(x => x.AddAsync(It.IsAny<Article>())).Callback((Article x) => list.Add(x));
             articleRepo.Setup(x => x.Delete(It.IsAny<Article>())).Callback((Article x) => list.Remove(x));
-            var service = new ArticleService.ArticleService(articleRepo.Object);
+            var service = new ArticleService(articleRepo.Object);
 
             for (int i = 0; i < 15; i++)
             {

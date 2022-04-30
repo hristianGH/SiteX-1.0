@@ -1,12 +1,12 @@
-﻿using AngleSharp;
-using SiteX.Data.Models.Article;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace SiteX.Data.Seeding
+﻿namespace SiteX.Data.Seeding
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using AngleSharp;
+    using SiteX.Data.Models.Article;
+
     public class ArticleSeeder : ISeeder
     {
         public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)

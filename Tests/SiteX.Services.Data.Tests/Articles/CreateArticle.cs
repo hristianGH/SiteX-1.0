@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
+
 namespace SiteX.Services.Data.Tests.Articles
 {
     public class CreateArticle
