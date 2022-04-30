@@ -1,11 +1,10 @@
 ﻿namespace SiteX.Data.Seeding
 {
+    using Microsoft.AspNetCore.Identity;
+    using SiteX.Data.Models;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
-
-    using Microsoft.AspNetCore.Identity;
-    using SiteX.Data.Models;
 
     public class UserSeeder : ISeeder
     {

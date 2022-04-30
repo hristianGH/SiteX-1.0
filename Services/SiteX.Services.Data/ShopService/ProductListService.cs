@@ -26,15 +26,15 @@
             this.locationService = locationService;
         }
 
-        public async  Task<ShopToSelectList> ToSelectListAsync()
+        public async Task<ShopToSelectList> ToSelectListAsync()
         {
             var selectedList = new ShopToSelectList()
             {
-                GendersToList =  this.genderService.GetGenders(),
-                CategoriesToList =  this.categoryService.GetCategories(),
-                SizesToList =  this.sizeService.GetSizes(),
-                ColorsToList =  this.colorService.GetColors(),
-                LocationsToList =  this.locationService.GetLocations(),
+                GendersToList = this.genderService.GetGenders(),
+                CategoriesToList = this.categoryService.GetCategories(),
+                SizesToList = this.sizeService.GetSizes(),
+                ColorsToList = this.colorService.GetColors(),
+                LocationsToList = this.locationService.GetLocations(),
             };
             return selectedList;
         }

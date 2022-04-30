@@ -4,7 +4,6 @@
     using System.Diagnostics;
     using System.IO;
     using System.Threading.Tasks;
-
     using CommandLine;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;

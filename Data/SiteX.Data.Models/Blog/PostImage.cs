@@ -1,9 +1,8 @@
 ﻿namespace SiteX.Data.Models.Blog
 {
+    using SiteX.Data.Common.Models;
     using System;
     using System.ComponentModel.DataAnnotations;
-
-    using SiteX.Data.Common.Models;
 
     public class PostImage : BaseDeletableModel<Guid>
     {

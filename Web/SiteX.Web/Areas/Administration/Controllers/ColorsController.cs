@@ -1,11 +1,9 @@
 ﻿namespace SiteX.Web.Areas.Administration.Controllers
 {
     using System.Threading.Tasks;
-
     using Microsoft.AspNetCore.Mvc;
     using SiteX.Data.Models.Shop;
     using SiteX.Services.Data.ShopService.Interface;
-    using SiteX.Web.ViewModels.ShopViewModels.ColorModels;
 
     public class ColorsController : AdministrationController
     {
@@ -16,13 +14,13 @@
             this.colorService = colorService;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             var colors = this.colorService.GetColors();
             return this.View(colors);
         }
 
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
             return this.View();
         }
@@ -37,10 +35,9 @@
 
             await this.colorService.CreateAsync(viewModel);
             return this.RedirectToAction("Index");
-
         }
 
-        public async Task<IActionResult> Edit(int id)
+        public IActionResult Edit(int id)
         {
             var viewModel = this.colorService.GetColorById(id);
 
@@ -58,7 +55,6 @@
             await this.colorService.EditColorAsync(viewModel);
 
             return this.RedirectToAction("Index");
-
         }
     }
 }

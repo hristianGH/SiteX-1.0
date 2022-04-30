@@ -1,17 +1,14 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Shop;
-using SiteX.Services.Data.ShopService;
-using SiteX.Web.ViewModels.ShopViewModels.CategoryModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Shop.CategoryTests
+﻿namespace SiteX.Services.Data.Tests.Shop.CategoryTests
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Shop;
+    using SiteX.Services.Data.ShopService;
+    using Xunit;
+
     public class EditCategory
     {
         [Fact]
@@ -27,9 +24,9 @@ namespace SiteX.Services.Data.Tests.Shop.CategoryTests
 
             var oldName = "Before Edit";
             var name = "After Edit";
-            var category = new Category() {Id=1,Name = oldName };
+            var category = new Category() { Id = 1, Name = oldName };
             list.Add(category);
-            
+
             var categoryEdit = new Category() { Id = 1, Name = name };
             await service.EditCategoryAsync(categoryEdit);
 

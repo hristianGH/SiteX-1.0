@@ -1,20 +1,18 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Shop;
-using SiteX.Services.Data.ShopService;
-using SiteX.Web.ViewModels.ShopViewModels.ProductModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Shop.ProductTests
+﻿namespace SiteX.Services.Data.Tests.Shop.ProductTests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Shop;
+    using SiteX.Services.Data.ShopService;
+    using SiteX.Web.ViewModels.ShopViewModels.ProductModels;
+    using Xunit;
+
     public class DeleteProduct
     {
-
         [Fact]
         public async Task RemoveProductRemoves()
         {
@@ -24,9 +22,8 @@ namespace SiteX.Services.Data.Tests.Shop.ProductTests
 
             mockProductRepo.Setup(x => x.AllAsNoTracking()).Returns(list.AsQueryable());
             mockProductRepo.Setup(x => x.AddAsync(It.IsAny<Product>())).Callback((Product x) => list.Add(x));
-            mockProductRepo.Setup(x => x.Delete(It.IsAny<Product>())).Callback((Product x) => x.IsDeleted=true);
+            mockProductRepo.Setup(x => x.Delete(It.IsAny<Product>())).Callback((Product x) => x.IsDeleted = true);
             var guid = Guid.NewGuid();
-
 
             var service = new ProductService(mockProductRepo.Object);
 
@@ -43,8 +40,8 @@ namespace SiteX.Services.Data.Tests.Shop.ProductTests
                 Quantity = 22,
                 Id = guid,
                 Description = "Product",
-
             };
+
             await service.CreateAsync(product);
 
             Assert.True(list.Count() > 0);
@@ -58,9 +55,8 @@ namespace SiteX.Services.Data.Tests.Shop.ProductTests
             Assert.True(list[0].Quantity == 22);
 
             await service.RemoveProductAsync(list.FirstOrDefault());
-            Assert.True(list.FirstOrDefault().IsAvalable==false);
+            Assert.True(list.FirstOrDefault().IsAvalable == false);
             Assert.True(list.FirstOrDefault().IsDeleted == true);
-
         }
 
         [Fact]
@@ -75,7 +71,6 @@ namespace SiteX.Services.Data.Tests.Shop.ProductTests
             mockProductRepo.Setup(x => x.Delete(It.IsAny<Product>())).Callback((Product x) => x.IsDeleted = true);
             var guid = Guid.NewGuid();
 
-
             var service = new ProductService(mockProductRepo.Object);
 
             var product = new ProductViewModel()
@@ -94,8 +89,8 @@ namespace SiteX.Services.Data.Tests.Shop.ProductTests
             };
 
             await service.CreateAsync(product);
-            list[0].Id=guid;
-            Assert.True(list.Count() > 0);
+            list[0].Id = guid;
+            Assert.NotEmpty(list);
             Assert.True(list[0].Name == "Big Shirt");
             Assert.True(list[0].Price == 12);
             Assert.True(list[0].Gender == "Unisex");

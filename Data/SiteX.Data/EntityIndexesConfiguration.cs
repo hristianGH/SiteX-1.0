@@ -1,9 +1,8 @@
 ﻿namespace SiteX.Data
 {
-    using System.Linq;
-
     using Microsoft.EntityFrameworkCore;
     using SiteX.Data.Common.Models;
+    using System.Linq;
 
     internal static class EntityIndexesConfiguration
     {

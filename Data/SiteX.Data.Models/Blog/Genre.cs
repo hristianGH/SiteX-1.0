@@ -1,8 +1,7 @@
 ﻿namespace SiteX.Data.Models.Blog
 {
-    using System.ComponentModel.DataAnnotations;
-
     using SiteX.Data.Common.Models;
+    using System.ComponentModel.DataAnnotations;
 
     public class Genre : BaseModel<int>
     {

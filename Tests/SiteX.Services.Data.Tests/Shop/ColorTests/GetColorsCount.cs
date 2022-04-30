@@ -1,20 +1,18 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Shop;
-using SiteX.Services.Data.ShopService;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Shop.ColorTests
+﻿namespace SiteX.Services.Data.Tests.Shop.ColorTests
 {
-    public class GetLocationCount
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Shop;
+    using SiteX.Services.Data.ShopService;
+    using Xunit;
+
+    public class GetColorsCount
     {
         [Fact]
-        public async Task ColorsCountShouldReturnValue()
+        public void ColorsCountShouldReturnValue()
         {
             var list = new List<Color>();
 
@@ -28,6 +26,7 @@ namespace SiteX.Services.Data.Tests.Shop.ColorTests
             {
                 list.Add(new Color() { Name = "Name" });
             }
+
             var count = service.GetColorsCount();
             Assert.True(count == 4);
         }

@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using SiteX.Services.Data.BlogService.Interface;
 using SiteX.Web.ViewModels.BlogViewModels;
-using System.Linq;
 using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -16,7 +15,7 @@ namespace SiteX.WebAPI.Controllers
     {
         private readonly IPostService postService;
 
-        public PostController(IPostService postService )
+        public PostController(IPostService postService)
         {
             this.postService = postService;
         }

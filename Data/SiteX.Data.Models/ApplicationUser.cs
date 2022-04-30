@@ -1,11 +1,10 @@
 ﻿// ReSharper disable VirtualMemberCallInConstructor
 namespace SiteX.Data.Models
 {
-    using System;
-    using System.Collections.Generic;
-
     using Microsoft.AspNetCore.Identity;
     using SiteX.Data.Common.Models;
+    using System;
+    using System.Collections.Generic;
 
     public class ApplicationUser : IdentityUser, IAuditInfo, IDeletableEntity
     {

@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using SiteX.Data.Models.Article;
-using SiteX.Services.Data.ArticleService.Interface;
-using System.Threading.Tasks;
-
-namespace SiteX.Web.Areas.Administration.Controllers
+﻿namespace SiteX.Web.Areas.Administration.Controllers
 {
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Mvc;
+    using SiteX.Data.Models.Article;
+    using SiteX.Services.Data.ArticleService.Interface;
+
     public class ArticlesController : AdministrationController
     {
         private readonly IArticleService articleService;
@@ -21,7 +20,6 @@ namespace SiteX.Web.Areas.Administration.Controllers
             var articles = this.articleService.GetArticles();
             if (articles != null)
             {
-
                 return this.View(articles);
             }
             else
@@ -31,16 +29,16 @@ namespace SiteX.Web.Areas.Administration.Controllers
         }
 
         // GET: ArticlesController/Details/5
-        public async Task<IActionResult> Details(int id)
+        public IActionResult Details(int id)
         {
-            return View();
+            return this.View();
         }
 
         // GET: ArticlesController/Create
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
             var article = new Article();
-            return View(article);
+            return this.View(article);
         }
 
         // POST: ArticlesController/Create
@@ -57,18 +55,18 @@ namespace SiteX.Web.Areas.Administration.Controllers
         }
 
         // GET: ArticlesController/Edit/5
-        public async Task<IActionResult> Edit(int id)
+        public IActionResult Edit(int id)
         {
             var edit = new Article();
             try
             {
                 edit = this.articleService.GetArticleById(id);
-
             }
             catch (System.Exception)
             {
                 return this.NotFound(id);
             }
+
             return this.View(edit);
         }
 
@@ -76,31 +74,33 @@ namespace SiteX.Web.Areas.Administration.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(Article edit)
         {
-            if (!ModelState.IsValid)
+            if (!this.ModelState.IsValid)
             {
                 return this.BadRequest();
             }
-           await this.articleService.EditArticleAsync(edit);
-            return RedirectToAction(nameof(Index));
+
+            await this.articleService.EditArticleAsync(edit);
+            return this.RedirectToAction(nameof(this.Index));
         }
 
         // GET: ArticlesController/Delete/5
         public ActionResult Delete(int id)
         {
             var article = this.articleService.GetArticleById(id);
-            return View(article);
+            return this.View(article);
         }
 
         // POST: ArticlesController/Delete/5
         [HttpPost]
         public async Task<IActionResult> Delete(Article article)
         {
-            if (!ModelState.IsValid)
+            if (!this.ModelState.IsValid)
             {
-                return BadRequest();
+                return this.BadRequest();
             }
-            await articleService.DeleteArticleAsync(article);
-            return RedirectToAction(nameof(Index));
+
+            await this.articleService.DeleteArticleAsync(article);
+            return this.RedirectToAction(nameof(this.Index));
         }
     }
 }

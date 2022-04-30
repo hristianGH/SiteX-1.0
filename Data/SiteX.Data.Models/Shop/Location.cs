@@ -1,8 +1,7 @@
 ﻿namespace SiteX.Data.Models.Shop
 {
-    using System.ComponentModel.DataAnnotations;
-
     using SiteX.Data.Common.Models;
+    using System.ComponentModel.DataAnnotations;
 
     public class Location : BaseModel<int>
     {

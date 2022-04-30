@@ -43,7 +43,7 @@ namespace SiteX.WebAPI.Controllers
             {
                 return BadRequest();
             }
-           await commentService.CreateAsync(viewModel);
+            await commentService.CreateAsync(viewModel);
             return Ok();
 
         }
@@ -56,7 +56,7 @@ namespace SiteX.WebAPI.Controllers
             {
                 return NotFound();
             }
-          await  commentService.DeleteAsync(id);
+            await commentService.DeleteAsync(id);
             return Ok();
         }
     }

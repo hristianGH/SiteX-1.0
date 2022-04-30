@@ -1,9 +1,8 @@
 ﻿namespace SiteX.Services.Data.BlogService.Interface
 {
+    using SiteX.Data.Models.Blog;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-
-    using SiteX.Data.Models.Blog;
 
     public interface IPostImageService
     {

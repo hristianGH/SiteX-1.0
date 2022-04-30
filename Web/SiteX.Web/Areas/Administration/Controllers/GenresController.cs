@@ -1,7 +1,6 @@
 ﻿namespace SiteX.Web.Areas.Administration.Controllers
 {
     using System.Threading.Tasks;
-
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
     using SiteX.Data.Models.Blog;
@@ -46,7 +45,6 @@
 
             await this.genreService.CreateAsync(viewModel);
             return this.RedirectToAction("Index");
-
         }
 
         // GET: GenreController/Edit/5
@@ -69,7 +67,6 @@
             await this.genreService.EditAsync(genre);
 
             return this.RedirectToAction("Index");
-
         }
 
         // GET: GenreController/Delete/5

@@ -1,17 +1,16 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Shop;
-using SiteX.Services.Data.ShopService;
-using SiteX.Web.ViewModels.ShopViewModels.ProductModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Shop.ProductTests
+﻿namespace SiteX.Services.Data.Tests.Shop.ProductTests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Shop;
+    using SiteX.Services.Data.ShopService;
+    using SiteX.Web.ViewModels.ShopViewModels.ProductModels;
+    using Xunit;
+
     public class EditProduct
     {
         [Fact]
@@ -36,12 +35,12 @@ namespace SiteX.Services.Data.Tests.Shop.ProductTests
                 Sizes = new int[] { 1, 2 },
                 Pictures = new string[] { "image1", "image2" },
                 Quantity = 22,
-                Id =guid,
+                Id = guid,
                 Description = "Product",
-
             };
+
             await service.CreateAsync(product);
-            list[0].Id=guid;
+            list[0].Id = guid;
 
             Assert.True(list.Count() > 0);
             Assert.True(list.First().Name == "Big Shirt");
@@ -67,6 +66,7 @@ namespace SiteX.Services.Data.Tests.Shop.ProductTests
                 Id = guid,
                 Description = "New Product",
             };
+
             await service.EditProductAsync(edit);
 
             Assert.True(list.Count() > 0);

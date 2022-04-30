@@ -3,7 +3,6 @@
     using System;
     using System.Linq;
     using System.Threading.Tasks;
-
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using SiteX.Data.Models;
@@ -30,7 +29,7 @@
             this.toListService = toListService;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             return this.RedirectToAction("All");
         }
@@ -102,7 +101,7 @@
                 Products = this.productService.FilterBySizeId(id),
             };
             productViewModel.ItemsCount = this.productService.GetProductCount();
-            productViewModel.ToSelectList =await this.toListService.ToSelectListAsync();
+            productViewModel.ToSelectList = await this.toListService.ToSelectListAsync();
 
             if (productViewModel != null)
             {
@@ -112,7 +111,7 @@
             return this.NotFound();
         }
 
-        public async Task<IActionResult> ById(Guid id)
+        public IActionResult ById(Guid id)
         {
             var product = this.productService.GetOutputProductById(id);
             this.ViewBag.ImageOne = this.productImageService.GetImagesByProductId(id).Select(x => x.Path).FirstOrDefault();
@@ -128,7 +127,7 @@
         }
 
         [HttpPost]
-        public async Task<IActionResult> ById(BuyingProductViewModel viewmodel)
+        public IActionResult ById(BuyingProductViewModel viewmodel)
         {
             if (!this.ModelState.IsValid)
             {
@@ -138,9 +137,9 @@
             return this.RedirectToAction("Buy", viewmodel);
         }
 
-        public async Task<IActionResult> Buy(BuyingProductViewModel viewModel)
+        public IActionResult Buy(BuyingProductViewModel viewModel)
         {
-            var prod = productService.GetOutputProductById(viewModel.ProductId);
+            var prod = this.productService.GetOutputProductById(viewModel.ProductId);
             return this.View(prod);
         }
 

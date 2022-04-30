@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using SiteX.Services.Data.TeamService.Interfaces;
-
-namespace SiteX.Web.Controllers
+﻿namespace SiteX.Web.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
+    using SiteX.Services.Data.TeamService.Interfaces;
+
     public class MembersController : Controller
     {
-
         private readonly ITeamService teamService;
 
         public MembersController(ITeamService teamService)
@@ -15,7 +14,7 @@ namespace SiteX.Web.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return this.View();
         }
 
         public IActionResult Team()

@@ -1,11 +1,10 @@
 ﻿namespace SiteX.Data.Repositories
 {
+    using Microsoft.EntityFrameworkCore;
+    using SiteX.Data.Common.Repositories;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
-
-    using Microsoft.EntityFrameworkCore;
-    using SiteX.Data.Common.Repositories;
 
     public class EfRepository<TEntity> : IRepository<TEntity>
         where TEntity : class

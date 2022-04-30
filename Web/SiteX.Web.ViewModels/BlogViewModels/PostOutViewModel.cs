@@ -1,12 +1,12 @@
 ﻿namespace SiteX.Web.ViewModels.BlogViewModels
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using AutoMapper;
     using SiteX.Data.Models;
     using SiteX.Data.Models.Blog;
     using SiteX.Services.Mapping;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
     public class PostOutViewModel : IMapFrom<Post>, IHaveCustomMappings
     {

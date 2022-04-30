@@ -1,10 +1,9 @@
 ﻿namespace SiteX.Data
 {
-    using System;
-    using System.Threading.Tasks;
-
     using Microsoft.EntityFrameworkCore;
     using SiteX.Data.Common;
+    using System;
+    using System.Threading.Tasks;
 
     public class DbQueryRunner : IDbQueryRunner
     {

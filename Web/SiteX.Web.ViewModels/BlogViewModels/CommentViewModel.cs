@@ -1,8 +1,8 @@
 ﻿namespace SiteX.Web.ViewModels.BlogViewModels
 {
-    using System.ComponentModel.DataAnnotations;
     using SiteX.Data.Models;
     using SiteX.Data.Models.Blog;
+    using System.ComponentModel.DataAnnotations;
 
     public class CommentViewModel
     {

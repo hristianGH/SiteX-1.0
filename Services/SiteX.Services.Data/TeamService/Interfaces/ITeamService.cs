@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Text;
     using System.Threading.Tasks;
     using SiteX.Data.Models.Team;
 
@@ -17,6 +16,5 @@
         public Task DeleteMemberAsync(Member member);
 
         public Member GetMemberById(Guid id);
-
     }
 }

@@ -1,16 +1,15 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Shop;
-using SiteX.Services.Data.ShopService;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Shop.ProductLocationTests
+﻿namespace SiteX.Services.Data.Tests.Shop.ProductLocationTests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Shop;
+    using SiteX.Services.Data.ShopService;
+    using Xunit;
+
     public class Create
     {
         [Fact]
@@ -24,11 +23,11 @@ namespace SiteX.Services.Data.Tests.Shop.ProductLocationTests
             mockRepo.Setup(x => x.AddAsync(It.IsAny<ProductLocation>())).Callback((ProductLocation x) => listProductLocations.Add(x));
 
             var productImageService = new ProductLocationService(mockRepo.Object);
-            var locations = new int[] {1,2};
+            var locations = new int[] { 1, 2 };
 
             await productImageService.CreatingProductLocationAsync(locations, Guid.NewGuid());
 
-            Assert.True(listProductLocations.Count() > 0);
+            Assert.NotEmpty(listProductLocations);
             Assert.Contains(listProductLocations, x => x.LocationId == 1);
             Assert.Contains(listProductLocations, x => x.LocationId == 2);
         }

@@ -5,7 +5,6 @@ using SiteX.Data.Models;
 using SiteX.Services.Data.ShopService.Interface;
 using SiteX.Web.ViewModels.ShopViewModels.ProductModels;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 
 
@@ -61,7 +60,7 @@ namespace SiteX.WebAPI.Controllers
             return this.NotFound();
         }
 
-      
+
 
         [HttpPost("Create")]
         public async Task<IActionResult> Create(ProductViewModel viewModel)
@@ -77,7 +76,7 @@ namespace SiteX.WebAPI.Controllers
             return this.Redirect("/");
         }
 
-       
+
 
         [HttpPut("Edit")]
         public async Task<IActionResult> Edit(ProductViewModel viewModel)

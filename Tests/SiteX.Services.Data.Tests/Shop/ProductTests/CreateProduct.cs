@@ -1,18 +1,16 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Shop;
-using SiteX.Services.Data.ShopService;
-using SiteX.Services.Data.ShopService.Interface;
-using SiteX.Web.ViewModels.ShopViewModels.ProductModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Shop.ProductTests
+﻿namespace SiteX.Services.Data.Tests.Shop.ProductTests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Shop;
+    using SiteX.Services.Data.ShopService;
+    using SiteX.Web.ViewModels.ShopViewModels.ProductModels;
+    using Xunit;
+
     public class CreateProduct
     {
         [Fact]
@@ -37,23 +35,20 @@ namespace SiteX.Services.Data.Tests.Shop.ProductTests
                 Sizes = new int[] { 1, 2 },
                 Pictures = new string[] { "image1", "image2" },
                 Quantity = 22,
-                Id = new Guid(),
+                Id = Guid.Empty,
                 Description = "Product",
-
             };
             await service.CreateAsync(product);
 
-            Assert.True(list.Count() > 0);
+            Assert.NotEmpty(list);
             Assert.True(list[0].Name == "Big Shirt");
             Assert.True(list[0].Price == 12);
             Assert.True(list[0].Gender == "Unisex");
-            Assert.True(list[0].ProductCategories.Count()==3);
-            Assert.True(list[0].ProductLocations.Count()==1);
+            Assert.True(list[0].ProductCategories.Count() == 3);
+            Assert.True(list[0].ProductLocations.Count() == 1);
             Assert.True(list[0].ProductColors.Count() == 2);
             Assert.True(list[0].ProductSizes.Count() == 2);
             Assert.True(list[0].Quantity == 22);
-
         }
-
     }
 }

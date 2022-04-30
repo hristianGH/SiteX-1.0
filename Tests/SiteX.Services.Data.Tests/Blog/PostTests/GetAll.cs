@@ -1,22 +1,20 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models;
-using SiteX.Data.Models.Blog;
-using SiteX.Services.Data.BlogService;
-using SiteX.Services.Data.BlogService.Interface;
-using SiteX.Services.Mapping;
-using SiteX.Web.ViewModels;
-using SiteX.Web.ViewModels.BlogViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Blog.PostTests
+﻿namespace SiteX.Services.Data.Tests.Blog.PostTests
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models;
+    using SiteX.Data.Models.Blog;
+    using SiteX.Services.Data.BlogService;
+    using SiteX.Services.Data.BlogService.Interface;
+    using SiteX.Services.Mapping;
+    using SiteX.Web.ViewModels;
+    using SiteX.Web.ViewModels.BlogViewModels;
+    using Xunit;
+
     public class GetAll
     {
         [Fact]
@@ -51,11 +49,10 @@ namespace SiteX.Services.Data.Tests.Blog.PostTests
                 listPosts[i].Id = i;
             }
 
-            var postById= service.GetPostById(3);
+            var postById = service.GetPostById(3);
             Assert.True(postById != null);
             Assert.True(postById.Id == 3);
             Assert.True(postById.Title == "Title 3");
-
         }
 
         [Fact]
@@ -94,11 +91,7 @@ namespace SiteX.Services.Data.Tests.Blog.PostTests
             Assert.True(postById != null);
             Assert.True(postById.Id == 3);
             Assert.True(postById.Title == "Title 3");
-
         }
-
-       
-
 
         [Fact]
         public async Task GetPostsShouldReturnPosts()
@@ -107,6 +100,7 @@ namespace SiteX.Services.Data.Tests.Blog.PostTests
             {
                 AutoMapperConfig.RegisterMappings(typeof(IndexViewModel).GetTypeInfo().Assembly);
             }
+
             var listPosts = new List<Post>();
             var listGenres = new List<PostGenre>();
 

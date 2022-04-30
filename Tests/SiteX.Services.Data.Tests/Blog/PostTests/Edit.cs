@@ -1,19 +1,17 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models;
-using SiteX.Data.Models.Blog;
-using SiteX.Services.Data.BlogService;
-using SiteX.Services.Data.BlogService.Interface;
-using SiteX.Web.ViewModels.BlogViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Blog.PostTests
+﻿namespace SiteX.Services.Data.Tests.Blog.PostTests
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models;
+    using SiteX.Data.Models.Blog;
+    using SiteX.Services.Data.BlogService;
+    using SiteX.Services.Data.BlogService.Interface;
+    using SiteX.Web.ViewModels.BlogViewModels;
+    using Xunit;
+
     public class Edit
     {
         [Fact]
@@ -39,13 +37,13 @@ namespace SiteX.Services.Data.Tests.Blog.PostTests
                 Body = "Text",
                 Title = "Title",
                 PostImages = new string[] { "image1", "image2" },
-                User = new ApplicationUser() { Id="id"},
+                User = new ApplicationUser() { Id = "id" },
                 PostGenres = new int[] { 1, 2 },
             };
             await service.CreatePostAsync(post);
             listPosts[0].Id = 1;
-            Assert.True(listPosts.Any(x => x.Body == "Text"));
-            Assert.True(listPosts.Any(x => x.Title == "Title"));
+            Assert.Contains(listPosts, x => x.Body == "Text");
+            Assert.Contains(listPosts, x => x.Title == "Title");
 
             var editModel = new PostEditViewModel()
             {
@@ -55,11 +53,10 @@ namespace SiteX.Services.Data.Tests.Blog.PostTests
                 PostGenres = new int[] { 1, 2 },
                 Id = 1,
             };
-           await service.EditPostAsync(editModel);
+            await service.EditPostAsync(editModel);
 
             Assert.True(listPosts.First().Title == "Title Edited");
             Assert.True(listPosts.First().Body == "Body Edited");
-
         }
     }
 }

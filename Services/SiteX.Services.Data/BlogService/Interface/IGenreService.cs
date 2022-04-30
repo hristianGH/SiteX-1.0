@@ -1,10 +1,9 @@
 ﻿namespace SiteX.Services.Data.BlogService.Interface
 {
-    using System.Collections.Generic;
-    using System.Threading.Tasks;
-
     using SiteX.Data.Models.Blog;
     using SiteX.Web.ViewModels.BlogViewModels;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     public interface IGenreService
     {

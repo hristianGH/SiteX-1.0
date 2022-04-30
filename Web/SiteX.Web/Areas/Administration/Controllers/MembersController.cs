@@ -1,11 +1,10 @@
 ﻿namespace SiteX.Web.Areas.Administration.Controllers
 {
+    using System;
+    using System.Threading.Tasks;
     using Microsoft.AspNetCore.Mvc;
     using SiteX.Data.Models.Team;
     using SiteX.Services.Data.TeamService.Interfaces;
-
-    using System;
-    using System.Threading.Tasks;
 
     public class MembersController : AdministrationController
     {
@@ -51,7 +50,7 @@
         // GET: MemberController/Edit/5
         public ActionResult Edit(Guid id)
         {
-            Member member = teamService.GetMemberById(id);
+            Member member = this.teamService.GetMemberById(id);
             return this.View(member);
         }
 

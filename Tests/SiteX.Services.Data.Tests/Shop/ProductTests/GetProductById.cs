@@ -1,23 +1,21 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Shop;
-using SiteX.Services.Data.ShopService;
-using SiteX.Services.Mapping;
-using SiteX.Web.ViewModels;
-using SiteX.Web.ViewModels.ShopViewModels.ProductModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Shop.ProductTests
+﻿namespace SiteX.Services.Data.Tests.Shop.ProductTests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Shop;
+    using SiteX.Services.Data.ShopService;
+    using SiteX.Services.Mapping;
+    using SiteX.Web.ViewModels;
+    using SiteX.Web.ViewModels.ShopViewModels.ProductModels;
+    using Xunit;
+
     public class GetProductById
     {
-
         [Fact]
         public async Task GetProductByIdShouldReturnProductByThatId()
         {
@@ -31,7 +29,6 @@ namespace SiteX.Services.Data.Tests.Shop.ProductTests
             var guid = Guid.NewGuid();
             for (int i = 0; i < 5; i++)
             {
-
                 var product = new ProductViewModel()
                 {
                     Name = $"Big Shirt {i}",
@@ -45,12 +42,13 @@ namespace SiteX.Services.Data.Tests.Shop.ProductTests
                     Quantity = 22,
                     Id = guid,
                     Description = "Product",
-
                 };
+
                 await service.CreateAsync(product);
                 list[i].Id = guid;
                 guid = Guid.NewGuid();
             }
+
             for (int i = 0; i < 5; i++)
             {
                 var get = service.GetProductById(list[i].Id);
@@ -76,7 +74,6 @@ namespace SiteX.Services.Data.Tests.Shop.ProductTests
             var guid = Guid.NewGuid();
             for (int i = 0; i < 5; i++)
             {
-
                 var product = new ProductViewModel()
                 {
                     Name = $"Big Shirt {i}",
@@ -90,12 +87,13 @@ namespace SiteX.Services.Data.Tests.Shop.ProductTests
                     Quantity = 22,
                     Id = guid,
                     Description = "Product",
-
                 };
+
                 await service.CreateAsync(product);
                 list[i].Id = guid;
                 guid = Guid.NewGuid();
             }
+
             for (int i = 0; i < 5; i++)
             {
                 var get = service.GetOutputProductById(list[i].Id);

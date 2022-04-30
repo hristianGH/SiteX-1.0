@@ -5,7 +5,6 @@
     using System.Reflection;
     using System.Threading;
     using System.Threading.Tasks;
-
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
     using SiteX.Data.Common.Models;
@@ -29,7 +28,7 @@
 
         public DbSet<Setting> Settings { get; set; }
 
-        //Blog
+        // Blog
         public DbSet<Post> Posts { get; set; }
 
         public DbSet<PostImage> PostImages { get; set; }
@@ -123,13 +122,12 @@
             builder.Entity<ProductLocation>().HasKey(x => new { x.ProductId, x.LocationId });
             builder.Entity<Comment>().HasOne(x => x.Parent);
 
-            builder.Entity<ProductCategory>().HasOne(x=>x.Product).WithMany(x=>x.ProductCategories).OnDelete(DeleteBehavior.Cascade);
+            builder.Entity<ProductCategory>().HasOne(x => x.Product).WithMany(x => x.ProductCategories).OnDelete(DeleteBehavior.Cascade);
             builder.Entity<ProductCategory>().HasOne(x => x.Category).WithMany(x => x.ProductCategories).OnDelete(DeleteBehavior.Cascade);
             builder.Entity<ProductColor>().HasOne(x => x.Product).WithMany(x => x.ProductColors).OnDelete(DeleteBehavior.Cascade);
             builder.Entity<ProductLocation>().HasOne(x => x.Product).WithMany(x => x.ProductLocations).OnDelete(DeleteBehavior.Cascade);
             builder.Entity<ProductSize>().HasOne(x => x.Product).WithMany(x => x.ProductSizes).OnDelete(DeleteBehavior.Cascade);
             builder.Entity<ProductImage>().HasOne(x => x.Product).WithMany(x => x.ProductImages).OnDelete(DeleteBehavior.Cascade);
-
         }
 
         private static void SetIsDeletedQueryFilter<T>(ModelBuilder builder)

@@ -1,7 +1,6 @@
 ﻿namespace SiteX.Data.Models.Shop
 {
     using System;
-
     using SiteX.Data.Common.Models;
 
     public class ProductLocation : BaseDeletableModel<int>

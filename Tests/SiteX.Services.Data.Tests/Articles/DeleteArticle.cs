@@ -1,15 +1,13 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Services.Data.ArticleService;
-using SiteX.Data.Models.Article;
-using SiteX.Data.Models.Team;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Articles
+﻿namespace SiteX.Services.Data.Tests.Articles
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Article;
+    using Xunit;
+
     public class DeleteArticle
     {
         [Fact]

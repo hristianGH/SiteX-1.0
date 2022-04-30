@@ -1,8 +1,7 @@
 ﻿namespace SiteX.Web.ViewModels.ShopViewModels
 {
-    using System.Collections.Generic;
-
     using SiteX.Data.Models.Shop;
+    using System.Collections.Generic;
 
     public class ShopToSelectList
     {

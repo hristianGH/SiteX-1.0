@@ -1,10 +1,9 @@
 ﻿namespace SiteX.Data.Seeding
 {
+    using SiteX.Data.Models.Shop;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
-
-    using SiteX.Data.Models.Shop;
 
     public class ColorSeeder : ISeeder
     {

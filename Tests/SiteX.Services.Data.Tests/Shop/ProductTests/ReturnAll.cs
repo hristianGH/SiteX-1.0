@@ -1,19 +1,19 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Shop;
-using SiteX.Services.Data.ShopService;
-using SiteX.Services.Mapping;
-using SiteX.Web.ViewModels;
-using SiteX.Web.ViewModels.ShopViewModels.ProductModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Shop.ProductTests
+﻿namespace SiteX.Services.Data.Tests.Shop.ProductTests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Shop;
+    using SiteX.Services.Data.ShopService;
+    using SiteX.Services.Mapping;
+    using SiteX.Web.ViewModels;
+    using SiteX.Web.ViewModels.ShopViewModels.ProductModels;
+    using Xunit;
+
     public class ReturnAll
     {
         [Fact]
@@ -49,12 +49,13 @@ namespace SiteX.Services.Data.Tests.Shop.ProductTests
                     Quantity = 22,
                     Id = guid,
                     Description = "Product",
-
                 };
+
                 await service.CreateAsync(product);
                 list[i].Id = guid;
                 guid = Guid.NewGuid();
             }
+
             var all = service.ReturnAll();
 
             Assert.NotNull(all);

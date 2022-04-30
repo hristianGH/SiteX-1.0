@@ -1,15 +1,15 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Shop;
-using SiteX.Services.Data.ShopService;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Shop.ReceitTests
+﻿namespace SiteX.Services.Data.Tests.Shop.ReceitTests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Shop;
+    using SiteX.Services.Data.ShopService;
+    using Xunit;
+
     public class CreateReceit
     {
         [Fact]
@@ -27,7 +27,7 @@ namespace SiteX.Services.Data.Tests.Shop.ReceitTests
 
             for (int i = 0; i < 3; i++)
             {
-                var receit = new Receit() {ProductId=Guid.NewGuid(),Price=12,ProductName="Test"};
+                var receit = new Receit() { ProductId = Guid.NewGuid(), Price = 12, ProductName = "Test" };
 
                 await service.CreateAsync(receit);
             }
@@ -35,7 +35,6 @@ namespace SiteX.Services.Data.Tests.Shop.ReceitTests
             Assert.NotEmpty(list);
             Assert.True(list[1].ProductName == "Test");
             Assert.True(list[1].Price == 12);
-
         }
     }
 }

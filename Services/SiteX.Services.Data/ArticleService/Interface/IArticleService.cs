@@ -1,9 +1,7 @@
 ﻿namespace SiteX.Services.Data.ArticleService.Interface
 {
     using SiteX.Data.Models.Article;
-    using System;
     using System.Collections.Generic;
-    using System.Text;
     using System.Threading.Tasks;
 
     public interface IArticleService

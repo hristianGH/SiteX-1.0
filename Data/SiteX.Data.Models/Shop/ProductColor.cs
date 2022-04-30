@@ -1,8 +1,7 @@
 ﻿namespace SiteX.Data.Models.Shop
 {
-    using System;
-
     using SiteX.Data.Common.Models;
+    using System;
 
     public class ProductColor : BaseDeletableModel<int>
     {

@@ -1,22 +1,19 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Blog;
-using SiteX.Services.Data.BlogService;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Blog.PostImageTests
+﻿namespace SiteX.Services.Data.Tests.Blog.PostImageTests
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Blog;
+    using SiteX.Services.Data.BlogService;
+    using Xunit;
+
     public class HardDelete
     {
         [Fact]
         public async Task HardDeleteShouldRemoveItemsFromRepository()
         {
-
             var listPostImages = new List<PostImage>();
 
             var mockRepo = new Mock<IDeletableEntityRepository<PostImage>>();
@@ -32,10 +29,10 @@ namespace SiteX.Services.Data.Tests.Blog.PostImageTests
             {
                 postImage.PostId = 1;
             }
+
             Assert.True(listPostImages.Any());
             await postImageService.HardDeletePostImagesByIdAsync(1);
             Assert.True(listPostImages.Any() == false);
-
         }
     }
 }

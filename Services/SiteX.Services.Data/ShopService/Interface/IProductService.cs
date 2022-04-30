@@ -1,11 +1,10 @@
 ﻿namespace SiteX.Services.Data.ShopService.Interface
 {
+    using SiteX.Data.Models.Shop;
+    using SiteX.Web.ViewModels.ShopViewModels.ProductModels;
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-
-    using SiteX.Data.Models.Shop;
-    using SiteX.Web.ViewModels.ShopViewModels.ProductModels;
 
     public interface IProductService
     {
@@ -39,7 +38,7 @@
 
         public Task EditProductAsync(ProductViewModel viewModel);
 
-        public Task CreateProductPeriphery(ProductViewModel viewModel,Product product);
+        public Task CreateProductPeriphery(ProductViewModel viewModel, Product product);
 
         public Task DeleteProductPeriphery(Product product);
 

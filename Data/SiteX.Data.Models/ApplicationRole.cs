@@ -2,7 +2,6 @@
 namespace SiteX.Data.Models
 {
     using System;
-
     using Microsoft.AspNetCore.Identity;
     using SiteX.Data.Common.Models;
 

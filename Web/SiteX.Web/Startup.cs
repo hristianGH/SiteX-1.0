@@ -1,7 +1,6 @@
 ﻿namespace SiteX.Web
 {
     using System.Reflection;
-    using AutoMapper;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -75,7 +74,6 @@
             services.AddTransient<IEmailSender, NullMessageSender>();
             services.AddTransient<ISettingsService, SettingsService>();
 
-
             // ShopServices
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<IGenderService, GenderService>();
@@ -91,7 +89,6 @@
             services.AddTransient<IProductListService, ProductListService>();
             services.AddTransient<IReceitService, ReceitService>();
 
-
             // BlogServices
             services.AddTransient<IGenreService, GenreService>();
             services.AddTransient<IPostGenreService, PostGenreSevice>();
@@ -105,13 +102,12 @@
 
             // Article
             services.AddTransient<IArticleService, ArticleService>();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            AutoMapperConfig.RegisterMappings(typeof(ErrorViewModel).GetTypeInfo().Assembly,typeof(Product).GetTypeInfo().Assembly);
+            AutoMapperConfig.RegisterMappings(typeof(ErrorViewModel).GetTypeInfo().Assembly, typeof(Product).GetTypeInfo().Assembly);
 
             // Seed data on application startup
             using (var serviceScope = app.ApplicationServices.CreateScope())

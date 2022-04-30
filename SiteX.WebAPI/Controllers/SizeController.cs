@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SiteX.Data.Models.Shop;
 using SiteX.Services.Data.ShopService.Interface;
@@ -29,7 +28,7 @@ namespace SiteX.WebAPI.Controllers
             var sizes = this.sizeService.GetSizes();
             return this.Ok(sizes);
         }
-      
+
 
         [HttpPost]
         [Route("Create")]
@@ -43,7 +42,7 @@ namespace SiteX.WebAPI.Controllers
             await this.sizeService.CreateAsync(viewModel);
             return this.Ok(viewModel);
         }
-       
+
 
         [HttpPut("Edit")]
         public async Task<IActionResult> Edit(Size viewModel)

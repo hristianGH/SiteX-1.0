@@ -96,7 +96,6 @@
 
             await this.commentService.CreateAsync(viewModel);
             return this.RedirectToAction("All");
-
         }
     }
 }

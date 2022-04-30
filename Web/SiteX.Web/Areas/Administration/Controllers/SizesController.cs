@@ -1,7 +1,6 @@
 ﻿namespace SiteX.Web.Areas.Administration.Controllers
 {
     using System.Threading.Tasks;
-
     using Microsoft.AspNetCore.Mvc;
     using SiteX.Data.Models.Shop;
     using SiteX.Services.Data.ShopService.Interface;
@@ -16,13 +15,13 @@
             this.sizeService = sizeService;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             var sizes = this.sizeService.GetSizes();
             return this.View(sizes);
         }
 
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
             return this.View();
         }
@@ -37,10 +36,9 @@
 
             await this.sizeService.CreateAsync(viewModel);
             return this.RedirectToAction("Index");
-
         }
 
-        public async Task<IActionResult> Edit(int id)
+        public IActionResult Edit(int id)
         {
             var viewModel = this.sizeService.GetSizeById(id);
 

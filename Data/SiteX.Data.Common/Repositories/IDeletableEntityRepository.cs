@@ -1,8 +1,7 @@
 ﻿namespace SiteX.Data.Common.Repositories
 {
-    using System.Linq;
-
     using SiteX.Data.Common.Models;
+    using System.Linq;
 
     public interface IDeletableEntityRepository<TEntity> : IRepository<TEntity>
         where TEntity : class, IDeletableEntity

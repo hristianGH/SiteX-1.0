@@ -1,9 +1,9 @@
 ﻿namespace SiteX.Web.Controllers
 {
+    using System.Threading.Tasks;
     using Microsoft.AspNetCore.Mvc;
     using SiteX.Services.Data.ArticleService.Interface;
     using SiteX.Web.ViewModels.ArticleViewModels;
-    using System.Threading.Tasks;
 
     public class ArticlesController : Controller
     {
@@ -14,14 +14,13 @@
             this.articleService = articleService;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             return this.RedirectToAction("All");
         }
 
-        public async Task<IActionResult> All(int page = 1)
+        public IActionResult All(int page = 1)
         {
-
             AllArticleViewModel articleViewModel = new AllArticleViewModel() { Articles = this.articleService.ToPage(page, 20), PageNumber = page, ItemsPerPage = 20 };
 
             articleViewModel.ItemsCount = this.articleService.GetArticlesCount();
@@ -29,11 +28,10 @@
             return this.View(articleViewModel);
         }
 
-        public async Task<IActionResult> ById(int id)
+        public IActionResult ById(int id)
         {
             var article = this.articleService.GetArticleById(id);
             return this.View(article);
         }
-
     }
 }

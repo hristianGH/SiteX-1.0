@@ -1,22 +1,19 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Blog;
-using SiteX.Services.Data.BlogService;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Blog.PostImageTests
+﻿namespace SiteX.Services.Data.Tests.Blog.PostImageTests
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Blog;
+    using SiteX.Services.Data.BlogService;
+    using Xunit;
+
     public class Create
     {
         [Fact]
         public async Task CreatePostImageShouldGetCreated()
         {
-
             var listPosts = new List<PostImage>();
 
             var mockRepo = new Mock<IDeletableEntityRepository<PostImage>>();
@@ -29,9 +26,9 @@ namespace SiteX.Services.Data.Tests.Blog.PostImageTests
 
             await postImageService.CreatingPostImageAsync(paths, 1);
 
-            Assert.True(listPosts.Count() > 0);
-            Assert.True(listPosts.Any(x => x.Path == "path1"));
-            Assert.True(listPosts.Any(x => x.Path == "path2"));
+            Assert.NotEmpty(listPosts);
+            Assert.Contains(listPosts, x => x.Path == "path1");
+            Assert.Contains(listPosts, x => x.Path == "path2");
         }
     }
 }

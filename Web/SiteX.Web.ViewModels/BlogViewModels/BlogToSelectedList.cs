@@ -1,10 +1,7 @@
 ﻿namespace SiteX.Web.ViewModels.BlogViewModels
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-
     using SiteX.Data.Models.Blog;
+    using System.Collections.Generic;
 
     public class BlogToSelectedList
     {

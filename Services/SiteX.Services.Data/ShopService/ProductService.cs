@@ -15,8 +15,7 @@
     {
         private readonly IDeletableEntityRepository<Product> productRepo;
 
-        public ProductService(IDeletableEntityRepository<Product> productRepo
-            )
+        public ProductService(IDeletableEntityRepository<Product> productRepo)
         {
             this.productRepo = productRepo;
         }
@@ -32,7 +31,7 @@
                 Price = viewModel.Price,
                 Quantity = viewModel.Quantity,
             };
-           await CreateProductPeriphery(viewModel, product);
+            await this.CreateProductPeriphery(viewModel, product);
             await this.productRepo.AddAsync(product);
             await this.productRepo.SaveChangesAsync();
         }
@@ -126,10 +125,10 @@
                 .Include(x => x.ProductLocations)
                 .Include(x => x.ProductSizes).FirstOrDefault();
             product.Name = viewModel.Name;
-            product.Description=viewModel.Description;
-            product.Price=viewModel.Price;
+            product.Description = viewModel.Description;
+            product.Price = viewModel.Price;
             product.Gender = viewModel.Gender;
-            product.Quantity=viewModel.Quantity;
+            product.Quantity = viewModel.Quantity;
 
             await this.DeleteProductPeriphery(product);
             await this.CreateProductPeriphery(viewModel, product);
@@ -162,8 +161,9 @@
                 UserId = product.UserId,
                 ProductName = product.Name,
             };
-            //await this.receitService.CreateAsync(receit);
-            //await this.productRepo.SaveChangesAsync();
+
+            // await this.receitService.CreateAsync(receit);
+            // await this.productRepo.SaveChangesAsync();
         }
 
         public async Task CreateProductPeriphery(ProductViewModel viewModel, Product product)

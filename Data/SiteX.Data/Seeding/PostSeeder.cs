@@ -1,10 +1,9 @@
 ﻿namespace SiteX.Data.Seeding
 {
-    using SiteX.Data.Models.Blog;
     using System;
-    using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+    using SiteX.Data.Models.Blog;
 
     public class PostSeeder : ISeeder
     {

@@ -1,16 +1,15 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Shop;
-using SiteX.Services.Data.ShopService;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Shop.ProductImageTests
+﻿namespace SiteX.Services.Data.Tests.Shop.ProductImageTests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Shop;
+    using SiteX.Services.Data.ShopService;
+    using Xunit;
+
     public class HardDelete
     {
         [Fact]
@@ -26,7 +25,7 @@ namespace SiteX.Services.Data.Tests.Shop.ProductImageTests
             var productId = Guid.NewGuid();
 
             var productImageService = new ProductImageService(mockRepo.Object);
-            var paths = new string[] {"image1"};
+            var paths = new string[] { "image1" };
 
             await productImageService.CreatingProductImageAsync(paths, productId);
 

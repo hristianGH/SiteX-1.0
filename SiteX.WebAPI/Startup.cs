@@ -52,7 +52,7 @@ namespace SiteX.WebAPI
                 .AddRoles<ApplicationRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders(); ;
-    
+
 
             services.AddSwaggerGen(c =>
             {
@@ -60,7 +60,7 @@ namespace SiteX.WebAPI
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
                 {
                     Type = SecuritySchemeType.ApiKey,
-                    Name= "Authorization",
+                    Name = "Authorization",
                     Scheme = "Bearer",
                     BearerFormat = "JWT",
                     In = ParameterLocation.Header,

@@ -1,22 +1,20 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Shop;
-using SiteX.Services.Data.ShopService;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Shop.ProductColorTests
+﻿namespace SiteX.Services.Data.Tests.Shop.ProductColorTests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Shop;
+    using SiteX.Services.Data.ShopService;
+    using Xunit;
+
     public class HardDelete
     {
         [Fact]
         public async Task HardDeleteProductColorShouldRemoveItemsFromRepository()
         {
-
             var listPostImages = new List<ProductColor>();
 
             var mockRepo = new Mock<IDeletableEntityRepository<ProductColor>>();
@@ -29,12 +27,10 @@ namespace SiteX.Services.Data.Tests.Shop.ProductColorTests
             var postImageService = new ProductColorService(mockRepo.Object);
             var paths = new int[] { 1 };
             await postImageService.CreatingProductColorAsync(paths, productId);
-            
 
             Assert.True(listPostImages.Any());
             await postImageService.HardDeleteProductColorByIdAsync(productId);
             Assert.True(listPostImages.Any() == false);
-
         }
     }
 }

@@ -1,10 +1,9 @@
 ﻿namespace SiteX.Services.Data.ShopService.Interface
 {
+    using SiteX.Data.Models.Shop;
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-
-    using SiteX.Data.Models.Shop;
 
     public interface IProductImageService
     {

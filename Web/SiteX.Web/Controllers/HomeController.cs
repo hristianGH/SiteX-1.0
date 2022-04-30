@@ -1,9 +1,7 @@
 ﻿namespace SiteX.Web.Controllers
 {
     using System.Diagnostics;
-
     using Microsoft.AspNetCore.Mvc;
-    using SiteX.Services.Data.ShopService.Interface;
     using SiteX.Services.Data.TeamService.Interfaces;
     using SiteX.Web.ViewModels;
 
@@ -19,7 +17,6 @@
         // TODO Make List of 5 articles to show on Home page
         public IActionResult Index()
         {
-
             return this.View();
         }
 
@@ -27,8 +24,6 @@
         {
             return this.View();
         }
-
-      
 
         public IActionResult Locations()
         {

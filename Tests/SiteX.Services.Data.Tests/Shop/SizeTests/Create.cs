@@ -1,9 +1,7 @@
 ﻿namespace SiteX.Services.Data.Tests.Shop.SizeTests
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
     using System.Threading.Tasks;
     using Moq;
     using SiteX.Data.Common.Repositories;
@@ -17,7 +15,6 @@
         [Fact]
         public async Task CreateSizeShouldAddSizeToRepository()
         {
-
             var listSize = new List<Size>();
 
             var mockRepo = new Mock<IRepository<Size>>();

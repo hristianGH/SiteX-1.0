@@ -4,12 +4,10 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
-    using AutoMapper;
     using SiteX.Data.Common.Models;
     using SiteX.Services.Mapping;
 
-    public class Product : BaseDeletableModel<Guid> ,IMapTo<Product>
+    public class Product : BaseDeletableModel<Guid>, IMapTo<Product>
     {
         [Required]
         [MaxLength(50)]
@@ -32,7 +30,7 @@
         public string Gender { get; set; }
 
         [Required]
-        [Range(1, int.MaxValue-1)]
+        [Range(1, int.MaxValue - 1)]
         public int Quantity { get; set; }
 
         public bool IsAvalable { get; set; } = true;

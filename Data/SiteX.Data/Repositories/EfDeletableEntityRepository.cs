@@ -1,11 +1,10 @@
 ﻿namespace SiteX.Data.Repositories
 {
-    using System;
-    using System.Linq;
-
     using Microsoft.EntityFrameworkCore;
     using SiteX.Data.Common.Models;
     using SiteX.Data.Common.Repositories;
+    using System;
+    using System.Linq;
 
     public class EfDeletableEntityRepository<TEntity> : EfRepository<TEntity>, IDeletableEntityRepository<TEntity>
         where TEntity : class, IDeletableEntity

@@ -2,7 +2,6 @@
 {
     using System;
     using System.Threading.Tasks;
-
     using Microsoft.AspNetCore.Mvc;
     using SiteX.Data.Common.Repositories;
     using SiteX.Data.Models;

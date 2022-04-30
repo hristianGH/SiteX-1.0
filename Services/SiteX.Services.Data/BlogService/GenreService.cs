@@ -1,14 +1,12 @@
 ﻿namespace SiteX.Services.Data.BlogService
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
-
     using SiteX.Data.Common.Repositories;
     using SiteX.Data.Models.Blog;
     using SiteX.Services.Data.BlogService.Interface;
     using SiteX.Web.ViewModels.BlogViewModels;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
 
     public class GenreService : IGenreService
     {

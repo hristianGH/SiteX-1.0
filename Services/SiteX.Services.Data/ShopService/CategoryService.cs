@@ -3,16 +3,13 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-
     using SiteX.Data.Common.Repositories;
     using SiteX.Data.Models.Shop;
     using SiteX.Services.Data.ShopService.Interface;
-    using SiteX.Web.ViewModels.ShopViewModels.CategoryModels;
 
     public class CategoryService : ICategoryService
     {
         private readonly IRepository<Category> categoryRepository;
-
 
         public CategoryService(
             IRepository<Category> categoryRepository)

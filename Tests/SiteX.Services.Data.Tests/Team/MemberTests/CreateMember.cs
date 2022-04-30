@@ -1,14 +1,13 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Team;
-using SiteX.Services.Data.TeamService;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Team.MemberTests
+﻿namespace SiteX.Services.Data.Tests.Team.MemberTests
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Team;
+    using Xunit;
+
     public class CreateMember
     {
         [Fact]
@@ -31,7 +30,6 @@ namespace SiteX.Services.Data.Tests.Team.MemberTests
             Assert.NotNull(list);
             Assert.True(list.First().FirstName == "FirstName");
             Assert.True(list.First().LastName == "LastName");
-
         }
     }
 }

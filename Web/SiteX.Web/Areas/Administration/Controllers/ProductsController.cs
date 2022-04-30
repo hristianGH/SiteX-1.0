@@ -3,7 +3,6 @@
     using System;
     using System.Linq;
     using System.Threading.Tasks;
-
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using SiteX.Data.Models;
@@ -32,7 +31,7 @@
             this.toListService = toListService;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             var products = this.productService.ReturnAll();
             return this.View(products);
@@ -99,7 +98,7 @@
             return this.RedirectToAction("Index");
         }
 
-        public async Task<IActionResult> Delete(Guid id)
+        public IActionResult Delete(Guid id)
         {
             var product = this.productService.GetOutputProductById(id);
             this.ViewBag.ImageOne = this.productImageService.GetImagesByProductId(id).Select(x => x.Path).FirstOrDefault();

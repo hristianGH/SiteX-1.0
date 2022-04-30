@@ -1,12 +1,12 @@
 ﻿namespace SiteX.Services.Data.TeamService
 {
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Team;
+    using SiteX.Services.Data.TeamService.Interfaces;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-    using SiteX.Data.Common.Repositories;
-    using SiteX.Data.Models.Team;
-    using SiteX.Services.Data.TeamService.Interfaces;
 
     public class TeamService : ITeamService
     {

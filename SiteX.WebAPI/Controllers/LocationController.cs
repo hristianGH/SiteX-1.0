@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SiteX.Data.Models.Shop;
 using SiteX.Services.Data.ShopService.Interface;

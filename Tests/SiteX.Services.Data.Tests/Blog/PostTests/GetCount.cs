@@ -1,19 +1,17 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models;
-using SiteX.Data.Models.Blog;
-using SiteX.Services.Data.BlogService;
-using SiteX.Services.Data.BlogService.Interface;
-using SiteX.Web.ViewModels.BlogViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Blog.PostTests
+﻿namespace SiteX.Services.Data.Tests.Blog.PostTests
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models;
+    using SiteX.Data.Models.Blog;
+    using SiteX.Services.Data.BlogService;
+    using SiteX.Services.Data.BlogService.Interface;
+    using SiteX.Web.ViewModels.BlogViewModels;
+    using Xunit;
+
     public class GetCount
     {
         [Fact]
@@ -44,12 +42,13 @@ namespace SiteX.Services.Data.Tests.Blog.PostTests
                     PostGenres = new int[] { 1, 2 },
                     User = new ApplicationUser() { Id = "id" },
                 };
+
                 await service.CreatePostAsync(post);
             }
+
             var count = service.GetPostCount();
 
             Assert.True(count == 5);
         }
-
     }
 }

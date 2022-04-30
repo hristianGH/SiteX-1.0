@@ -1,20 +1,17 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Shop;
-using SiteX.Services.Data.ShopService;
-using SiteX.Web.ViewModels.ShopViewModels.LocationModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Shop.LocationTests
+﻿namespace SiteX.Services.Data.Tests.Shop.LocationTests
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Shop;
+    using SiteX.Services.Data.ShopService;
+    using SiteX.Web.ViewModels.ShopViewModels.LocationModels;
+    using Xunit;
+
     public class CreateLocation
     {
-
         [Fact]
         public async Task GetColorsShouldReturnValue()
         {
@@ -31,14 +28,11 @@ namespace SiteX.Services.Data.Tests.Shop.LocationTests
                 Name = "Name",
             };
 
-          await  service.CreateAsync(model);
-
+            await service.CreateAsync(model);
 
             Assert.True(list.Count() > 0);
             Assert.True(list.First().Address == "Address");
             Assert.True(list.First().Name == "Name");
-
-
         }
     }
 }

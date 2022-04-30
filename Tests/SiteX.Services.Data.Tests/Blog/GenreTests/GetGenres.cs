@@ -1,17 +1,15 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Blog;
-using SiteX.Services.Data.BlogService;
-using SiteX.Web.ViewModels.BlogViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Blog.GenreTests
+﻿namespace SiteX.Services.Data.Tests.Blog.GenreTests
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Blog;
+    using SiteX.Services.Data.BlogService;
+    using SiteX.Web.ViewModels.BlogViewModels;
+    using Xunit;
+
     public class GetGenres
     {
         [Fact]
@@ -32,10 +30,10 @@ namespace SiteX.Services.Data.Tests.Blog.GenreTests
 
                 await service.CreateAsync(genre);
             }
+
             var getAll = service.GetGenres();
 
             Assert.True(getAll.Count() == 10);
-
         }
 
         [Fact]

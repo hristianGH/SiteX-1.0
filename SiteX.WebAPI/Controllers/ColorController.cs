@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SiteX.Data.Models.Shop;
 using SiteX.Services.Data.ShopService.Interface;
-using SiteX.Web.ViewModels.ShopViewModels.ColorModels;
 using System.Threading.Tasks;
 
 namespace SiteX.WebAPI.Controllers

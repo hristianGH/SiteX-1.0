@@ -1,7 +1,6 @@
 ﻿namespace SiteX.Web.ViewModels.ShopViewModels.ProductModels
 {
     using System;
-
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Linq;
@@ -59,27 +58,22 @@
                 .ForMember(x => x.Categories, opt =>
                 {
                     opt.MapFrom(x => x.ProductCategories.Select(x => x.Category).ToList());
-
                 })
                 .ForMember(x => x.Locations, opt =>
                 {
                     opt.MapFrom(x => x.ProductLocations.Select(x => x.Location).ToList());
-
                 })
                 .ForMember(x => x.Sizes, opt =>
                 {
                     opt.MapFrom(x => x.ProductSizes.Select(x => x.Size).ToList());
-
                 })
                 .ForMember(x => x.Colors, opt =>
                 {
                     opt.MapFrom(x => x.ProductColors.Select(x => x.Color).ToList());
-
                 })
                 .ForMember(x => x.ImageUrl, opt =>
                 {
                     opt.MapFrom(x => x.ProductImages.OrderBy(x => x.Id).Select(x => x.Path).FirstOrDefault());
-
                 })
                 .ReverseMap();
         }

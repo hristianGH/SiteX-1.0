@@ -1,15 +1,13 @@
 ﻿namespace SiteX.Web.ViewModels.ShopViewModels.ProductModels
 {
-    using System;
-
-    using System.Collections.Generic;
-
-    using System.ComponentModel.DataAnnotations;
-    using System.Linq;
     using AutoMapper;
     using SiteX.Data.Models;
     using SiteX.Data.Models.Shop;
     using SiteX.Services.Mapping;
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Linq;
 
     public class ProductViewModel : ShopToSelectList, IMapFrom<Product>, IHaveCustomMappings
     {
@@ -85,7 +83,7 @@
                  })
                  .ForMember(x => x.Pictures, opt =>
                  {
-                   opt.MapFrom(x => x.ProductImages.OrderBy(x => x.Id).Select(x => x.Path).ToList());
+                     opt.MapFrom(x => x.ProductImages.OrderBy(x => x.Id).Select(x => x.Path).ToList());
 
                  }).ReverseMap();
         }

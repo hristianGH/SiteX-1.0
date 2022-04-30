@@ -1,19 +1,16 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Shop;
-using SiteX.Services.Data.ShopService;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Shop.LocationTests
+﻿namespace SiteX.Services.Data.Tests.Shop.LocationTests
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Shop;
+    using SiteX.Services.Data.ShopService;
+    using Xunit;
+
     public class EditLocation
     {
-
         [Fact]
         public async Task LocationEditShouldChangeValue()
         {
@@ -29,16 +26,14 @@ namespace SiteX.Services.Data.Tests.Shop.LocationTests
             var name = "After Edit";
             var oldAddress = "Before Address";
             var address = "After Address";
-            var location = new Location() { Id = 1, Name = oldName,Address=oldAddress };
+            var location = new Location() { Id = 1, Name = oldName, Address = oldAddress };
             list.Add(location);
 
-            var locationEdit = new Location() { Id = 1, Name = name,Address=address };
+            var locationEdit = new Location() { Id = 1, Name = name, Address = address };
             await service.EditAsync(locationEdit);
 
             Assert.Equal(name, list[0].Name);
             Assert.Equal(address, list[0].Address);
-
         }
-
     }
 }

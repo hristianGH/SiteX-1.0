@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SiteX.Data.Models.Blog;
 using SiteX.Services.Data.BlogService.Interface;
@@ -26,7 +25,7 @@ namespace SiteX.WebAPI.Controllers
             return Ok(genres);
         }
 
- 
+
 
         [HttpPost("Create")]
         public async Task<IActionResult> Create(GenreViewModel viewModel)

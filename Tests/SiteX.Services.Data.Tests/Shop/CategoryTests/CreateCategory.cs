@@ -1,15 +1,14 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Shop;
-using SiteX.Services.Data.ShopService;
-using SiteX.Web.ViewModels.ShopViewModels.CategoryModels;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Shop.CategoryTests
+﻿namespace SiteX.Services.Data.Tests.Shop.CategoryTests
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Shop;
+    using SiteX.Services.Data.ShopService;
+    using Xunit;
+
     public class CreateCategory
     {
         [Fact]
@@ -24,14 +23,12 @@ namespace SiteX.Services.Data.Tests.Shop.CategoryTests
             var service = new CategoryService(mockRepo.Object);
 
             var name = "Test Category";
-            var category = new Category() {Id=1, Name = name };
+            var category = new Category() { Id = 1, Name = name };
 
             await service.CreateAsync(category);
 
             Assert.True(list.Count() > 0);
             Assert.Equal(name, list[0].Name);
         }
-
-
     }
 }

@@ -1,10 +1,9 @@
 ﻿namespace SiteX.Data.Models.Blog
 {
+    using SiteX.Data.Common.Models;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-
-    using SiteX.Data.Common.Models;
 
     public class Post : BaseDeletableModel<int>
     {

@@ -1,18 +1,17 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Shop;
-using SiteX.Services.Data.ShopService;
-using SiteX.Web.ViewModels.ShopViewModels.SizeModels;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Shop.SizeTests
+﻿namespace SiteX.Services.Data.Tests.Shop.SizeTests
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Shop;
+    using SiteX.Services.Data.ShopService;
+    using SiteX.Web.ViewModels.ShopViewModels.SizeModels;
+    using Xunit;
+
     public class GetSizeById
     {
-
         [Fact]
         public async Task GetSizeByIdShoudReturnSizeByIdWithValue()
         {
@@ -26,7 +25,6 @@ namespace SiteX.Services.Data.Tests.Shop.SizeTests
             var sizeService = new SizeService(mockRepo.Object);
             for (int i = 0; i < 3; i++)
             {
-
                 var size = new SizeViewModel()
                 {
                     Name = $"Test {i}",
@@ -39,7 +37,6 @@ namespace SiteX.Services.Data.Tests.Shop.SizeTests
             Assert.NotNull(sizeById);
             Assert.True(sizeById.Id == 1);
             Assert.True(sizeById.Name == "Test 1");
-
         }
     }
 }

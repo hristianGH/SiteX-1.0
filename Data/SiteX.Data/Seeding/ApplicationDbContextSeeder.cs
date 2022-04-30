@@ -1,13 +1,12 @@
 ﻿namespace SiteX.Data.Seeding
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Threading.Tasks;
-
     using Microsoft.AspNetCore.Identity;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
     using SiteX.Data.Models;
+    using System;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     public class ApplicationDbContextSeeder : ISeeder
     {

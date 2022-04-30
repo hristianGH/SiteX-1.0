@@ -1,14 +1,12 @@
 ﻿namespace SiteX.Services.Data.ShopService
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
-
     using SiteX.Data.Common.Repositories;
     using SiteX.Data.Models.Shop;
     using SiteX.Services.Data.ShopService.Interface;
     using SiteX.Web.ViewModels.ShopViewModels.LocationModels;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
 
     public class LocationService : ILocationService
     {

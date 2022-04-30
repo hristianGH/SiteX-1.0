@@ -1,12 +1,10 @@
 ﻿namespace SiteX.Web.Areas.Administration.Controllers
 {
     using System.Threading.Tasks;
-
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using SiteX.Data.Models.Shop;
     using SiteX.Services.Data.ShopService.Interface;
-    using SiteX.Web.ViewModels.ShopViewModels.CategoryModels;
 
     public class CategoriesController : AdministrationController
     {
@@ -17,13 +15,13 @@
             this.categoryService = categoryService;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             var categories = this.categoryService.GetCategories();
             return this.View(categories);
         }
 
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
             return this.View();
         }
@@ -38,10 +36,9 @@
 
             await this.categoryService.CreateAsync(viewModel);
             return this.RedirectToAction("Index");
-
         }
 
-        public async Task<IActionResult> Edit(int id)
+        public IActionResult Edit(int id)
         {
             var viewModel = this.categoryService.GetCategoryById(id);
             return this.View(viewModel);
@@ -59,7 +56,6 @@
             await this.categoryService.EditCategoryAsync(viewModel);
 
             return this.RedirectToAction("Index");
-
         }
     }
 }

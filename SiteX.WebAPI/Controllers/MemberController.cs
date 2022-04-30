@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SiteX.Data.Models.Team;
 using SiteX.Services.Data.TeamService.Interfaces;
-using System;
 using System.Threading.Tasks;
 
 namespace SiteX.WebAPI.Controllers
@@ -41,7 +39,7 @@ namespace SiteX.WebAPI.Controllers
             return this.Ok(member);
         }
 
-         
+
 
         // POST: MemberController/Edit/5
         [HttpPut("Edit")]

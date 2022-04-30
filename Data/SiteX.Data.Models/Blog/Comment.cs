@@ -1,9 +1,8 @@
 ﻿namespace SiteX.Data.Models.Blog
 {
-    using System;
+    using SiteX.Data.Common.Models;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using SiteX.Data.Common.Models;
 
     public class Comment : BaseDeletableModel<int>
     {

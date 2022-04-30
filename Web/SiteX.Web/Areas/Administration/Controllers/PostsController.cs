@@ -2,12 +2,10 @@
 {
     using System.Linq;
     using System.Threading.Tasks;
-
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using SiteX.Data.Models;
-    using SiteX.Data.Models.Blog;
     using SiteX.Services.Data.BlogService.Interface;
     using SiteX.Web.ViewModels.BlogViewModels;
 
@@ -63,19 +61,20 @@
         }
 
         [HttpGet]
-        public async Task<IActionResult> Delete(int id)
+        public IActionResult Delete(int id)
         {
-            var viewModel = postService.GetOutputPostById(id);
+            var viewModel = this.postService.GetOutputPostById(id);
             return this.View(viewModel);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Delete(int id,PostOutViewModel post)
+        public async Task<IActionResult> Delete(int id, PostOutViewModel post)
         {
             if (!this.ModelState.IsValid)
             {
                 return this.BadRequest();
             }
+
             await this.postService.SoftDeletePostAsync(post.Id);
             return this.RedirectToAction("Index");
         }

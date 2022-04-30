@@ -20,12 +20,11 @@ namespace SiteX.WebAPI.Controllers
 
         // GET: ArticlesController
         [HttpGet("All")]
-        public async Task<IActionResult> All()
+        public IActionResult All()
         {
             var articles = this.articleService.GetArticles();
             if (articles != null)
             {
-
                 return this.Ok(articles);
             }
             else
@@ -45,7 +44,7 @@ namespace SiteX.WebAPI.Controllers
             await this.articleService.CreateArticleAsync(article);
             return Ok(article);
         }
- 
+
 
         // POST: ArticlesController/Edit/5
         [HttpPut("Edit")]
@@ -55,7 +54,7 @@ namespace SiteX.WebAPI.Controllers
             {
                 return this.BadRequest();
             }
-            this.articleService.EditArticleAsync(edit);
+            await this.articleService.EditArticleAsync(edit);
             return Ok(edit);
         }
 

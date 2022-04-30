@@ -2,7 +2,6 @@
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using SiteX.Data.Models;
 
     public class PostEditViewModel : BlogToSelectedList
     {

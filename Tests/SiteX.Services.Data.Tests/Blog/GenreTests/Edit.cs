@@ -1,17 +1,15 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Blog;
-using SiteX.Services.Data.BlogService;
-using SiteX.Web.ViewModels.BlogViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Blog.GenreTests
+﻿namespace SiteX.Services.Data.Tests.Blog.GenreTests
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Blog;
+    using SiteX.Services.Data.BlogService;
+    using SiteX.Web.ViewModels.BlogViewModels;
+    using Xunit;
+
     public class Edit
     {
         [Fact]
@@ -29,7 +27,7 @@ namespace SiteX.Services.Data.Tests.Blog.GenreTests
             {
                 var genre = new GenreViewModel()
                 {
-                    Name = $"Test Genre {i}"
+                    Name = $"Test Genre {i}",
                 };
                 await service.CreateAsync(genre);
                 list[i].Id = i;
@@ -37,7 +35,7 @@ namespace SiteX.Services.Data.Tests.Blog.GenreTests
 
             await service.EditAsync(new Genre { Id = 3, Name = $"Edited Genre" });
 
-            Assert.True(list.Any(x => x.Name == "Edited Genre"));
+            Assert.Contains(list, x => x.Name == "Edited Genre");
         }
 
         [Fact]
@@ -55,7 +53,7 @@ namespace SiteX.Services.Data.Tests.Blog.GenreTests
             {
                 var genre = new GenreViewModel()
                 {
-                    Name = $"Test Genre {i}"
+                    Name = $"Test Genre {i}",
                 };
                 await service.CreateAsync(genre);
                 list[i].Id = i;
@@ -63,7 +61,7 @@ namespace SiteX.Services.Data.Tests.Blog.GenreTests
 
             await service.EditAsync(new Genre { Id = 3, Name = $"Edited Genre" });
 
-            Assert.True(list.Any(x => x.Name == "Edited Genre"));
+            Assert.Contains(list, x => x.Name == "Edited Genre");
             Assert.True(list.Where(x => x.Name == "Edited Genre" && x.Id == 3).Any());
         }
     }

@@ -1,19 +1,16 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Shop;
-using SiteX.Services.Data.ShopService;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Shop.ColorTests
+﻿namespace SiteX.Services.Data.Tests.Shop.ColorTests
 {
-    public class EditLocation
-    {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Shop;
+    using SiteX.Services.Data.ShopService;
+    using Xunit;
 
+    public class EditColor
+    {
         [Fact]
         public async Task ColorEditSholdChangeName()
         {
@@ -35,6 +32,5 @@ namespace SiteX.Services.Data.Tests.Shop.ColorTests
 
             Assert.Equal(name, list[0].Name);
         }
-
     }
 }

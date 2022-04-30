@@ -2,7 +2,6 @@
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-
     using SiteX.Data.Common.Models;
 
     public class Category : BaseModel<int>

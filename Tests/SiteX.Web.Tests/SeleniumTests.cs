@@ -1,10 +1,9 @@
 ﻿namespace SiteX.Web.Tests
 {
-    using System;
-    using System.Linq;
-
     using OpenQA.Selenium;
     using OpenQA.Selenium.Chrome;
+    using System;
+    using System.Linq;
     using Xunit;
 
     public class SeleniumTests : IClassFixture<SeleniumServerFactory<Startup>>, IDisposable

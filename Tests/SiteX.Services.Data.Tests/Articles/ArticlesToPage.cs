@@ -7,7 +7,6 @@
     using Moq;
     using SiteX.Data.Common.Repositories;
     using SiteX.Data.Models.Article;
-    using SiteX.Data.Models.Team;
     using SiteX.Services.Data.ArticleService;
     using Xunit;
 

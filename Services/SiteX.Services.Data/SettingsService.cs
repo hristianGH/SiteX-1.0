@@ -2,7 +2,6 @@
 {
     using System.Collections.Generic;
     using System.Linq;
-
     using SiteX.Data.Common.Repositories;
     using SiteX.Data.Models;
     using SiteX.Services.Mapping;

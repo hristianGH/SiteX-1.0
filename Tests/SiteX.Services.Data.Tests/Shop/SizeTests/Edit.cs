@@ -1,17 +1,15 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Shop;
-using SiteX.Services.Data.ShopService;
-using SiteX.Web.ViewModels.ShopViewModels.SizeModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Shop.SizeTests
+﻿namespace SiteX.Services.Data.Tests.Shop.SizeTests
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Shop;
+    using SiteX.Services.Data.ShopService;
+    using SiteX.Web.ViewModels.ShopViewModels.SizeModels;
+    using Xunit;
+
     public class Edit
     {
         [Fact]
@@ -34,8 +32,8 @@ namespace SiteX.Services.Data.Tests.Shop.SizeTests
             var edit = new Size() { Id = 1, Name = "Edited" };
             await sizeService.EditSizeAsync(edit);
 
-            Assert.True(listSize.Count() == 1);
-            Assert.True(listSize.Any(x => x.Id == 1 && x.Name == "Edited"));
+            Assert.True(listSize.Count == 1);
+            Assert.Contains(listSize, x => x.Id == 1 && x.Name == "Edited");
         }
     }
 }

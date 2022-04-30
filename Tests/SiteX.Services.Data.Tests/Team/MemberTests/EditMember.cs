@@ -1,15 +1,14 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Team;
-using SiteX.Services.Data.TeamService;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Team.MemberTests
+﻿namespace SiteX.Services.Data.Tests.Team.MemberTests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Team;
+    using Xunit;
+
     public class EditMember
     {
         [Fact]
@@ -33,7 +32,7 @@ namespace SiteX.Services.Data.Tests.Team.MemberTests
             var edit = new Member() { FirstName = "Edit", LastName = "Edit", Id = memberId };
             await service.EditMemberAsync(edit);
 
-            Assert.True(list.First().FirstName == "Edit") ;
+            Assert.True(list.First().FirstName == "Edit");
             Assert.True(list.First().LastName == "Edit");
         }
     }

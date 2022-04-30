@@ -1,17 +1,15 @@
-﻿using Moq;
-using SiteX.Data.Common.Repositories;
-using SiteX.Data.Models.Team;
-using SiteX.Services.Data.TeamService;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace SiteX.Services.Data.Tests.Team.MemberTests
+﻿namespace SiteX.Services.Data.Tests.Team.MemberTests
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Moq;
+    using SiteX.Data.Common.Repositories;
+    using SiteX.Data.Models.Team;
+    using Xunit;
+
     public class DeleteMember
     {
-
         [Fact]
         public async Task DeleteMemberShoulRemoveMemberFromRepository()
         {
@@ -24,7 +22,6 @@ namespace SiteX.Services.Data.Tests.Team.MemberTests
             mockProductRepo.Setup(x => x.AddAsync(It.IsAny<Member>())).Callback((Member x) => list.Add(x));
             mockProductRepo.Setup(x => x.Delete(It.IsAny<Member>())).Callback((Member x) => list.Remove(x));
 
-
             var service = new TeamService.TeamService(mockProductRepo.Object);
 
             var member = new Member() { FirstName = "FirstName", LastName = "LastName" };
@@ -34,7 +31,6 @@ namespace SiteX.Services.Data.Tests.Team.MemberTests
 
             await service.DeleteMemberAsync(member);
             Assert.False(list.Any());
-
         }
     }
 }
