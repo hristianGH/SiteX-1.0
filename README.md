@@ -1,6 +1,8 @@
 # SiteX
 Original Code https://github.com/hristianGH/SoftUni-CSharp/tree/main/SiteX
 
+[![codecov](https://codecov.io/gh/hristianGH/SiteX-1.0/branch/main/graph/badge.svg?token=gzSZpVlwpR)](https://codecov.io/gh/hristianGH/SiteX-1.0)
+
 ## Project Description
 
 SiteX is a site. Its purpose is to be easy to use site for a small company.
