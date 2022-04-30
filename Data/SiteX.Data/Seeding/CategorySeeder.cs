@@ -3,9 +3,11 @@
     using SiteX.Data.Models.Shop;
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Threading.Tasks;
 
+    [ExcludeFromCodeCoverage]
     internal class CategorySeeder : ISeeder
     {
         public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)

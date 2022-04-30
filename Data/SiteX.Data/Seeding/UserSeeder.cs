@@ -3,9 +3,11 @@
     using Microsoft.AspNetCore.Identity;
     using SiteX.Data.Models;
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Threading.Tasks;
 
+    [ExcludeFromCodeCoverage]
     public class UserSeeder : ISeeder
     {
         private readonly UserManager<ApplicationUser> userManager;

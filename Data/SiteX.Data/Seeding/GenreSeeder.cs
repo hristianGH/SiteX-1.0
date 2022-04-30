@@ -1,10 +1,12 @@
 ﻿namespace SiteX.Data.Seeding
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Threading.Tasks;
     using SiteX.Data.Models.Blog;
 
+    [ExcludeFromCodeCoverage]
     public class GenreSeeder : ISeeder
     {
         public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)

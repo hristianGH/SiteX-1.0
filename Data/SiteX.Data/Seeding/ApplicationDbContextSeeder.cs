@@ -7,7 +7,9 @@
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
+    using System.Diagnostics.CodeAnalysis;
 
+    [ExcludeFromCodeCoverage]
     public class ApplicationDbContextSeeder : ISeeder
     {
         private readonly UserManager<ApplicationUser> userManager;

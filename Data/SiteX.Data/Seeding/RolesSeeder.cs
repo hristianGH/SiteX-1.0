@@ -5,8 +5,11 @@
     using SiteX.Common;
     using SiteX.Data.Models;
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Threading.Tasks;
+
+    [ExcludeFromCodeCoverage]
 
     internal class RolesSeeder : ISeeder
     {

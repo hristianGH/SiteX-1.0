@@ -2,9 +2,11 @@
 {
     using SiteX.Data.Models.Shop;
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Threading.Tasks;
 
+    [ExcludeFromCodeCoverage]
     public class GenderSeeder : ISeeder
     {
         public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)
